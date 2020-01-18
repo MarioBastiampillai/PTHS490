@@ -110,9 +110,9 @@ public class capstoneProject
 		
 		Random randomObject=new Random();
 		ArrayList<Integer> randomPressureArray1=new ArrayList<Integer>(100);
-		int[] randomPressureArray2=new int[100];
-		int[] randomPressureArray3=new int[100];
-		int[] randomPressureArray4=new int[100];
+		ArrayList<Integer> randomPressureArray2=new ArrayList<Integer>(100);
+		ArrayList<Integer> randomPressureArray3=new ArrayList<Integer>(100);
+		ArrayList<Integer> randomPressureArray4=new ArrayList<Integer>(100);
 		recordButton.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e)
@@ -123,7 +123,6 @@ public class capstoneProject
 				
 				//average pressure when tool handling 250 kPa
 				//need to generate four different values
-				
 				
 				Timer timerObject=new Timer();
 				timerObject.schedule(new TimerTask()
@@ -137,7 +136,6 @@ public class capstoneProject
 					{
 						int randomAcceleration=randomObject.nextInt(500-100)+100;
 						String randomAccelerationString=Integer.toString(randomAcceleration)+"m/s^2";
-						System.out.println(randomAcceleration);
 						accelerationValue.setText(randomAccelerationString);
 						for(int i=0; i<=3; i++)
 						{
@@ -150,24 +148,24 @@ public class capstoneProject
 							}
 							else if(i==1)
 							{
-								randomPressureArray2[index2]=randomObject.nextInt(300-200)+200;
-								String randomPressureArray2Reading=Integer.toString(randomPressureArray2[index2]);
+								randomPressureArray2.add(randomObject.nextInt(300-200)+200);
+								String randomPressureArray2Reading=Integer.toString(randomPressureArray2.get(index2));
 								pressure2Reading.setText(randomPressureArray2Reading+" kPa");
-								++index2;
+								index2++;
 							}
 							else if(i==2)
 							{
-								randomPressureArray3[index3]=randomObject.nextInt(300-200)+200;
-								String randomPressureArray3Reading=Integer.toString(randomPressureArray3[index3]);
+								randomPressureArray3.add(randomObject.nextInt(300-200)+200);
+								String randomPressureArray3Reading=Integer.toString(randomPressureArray3.get(index3));
 								pressure3Reading.setText(randomPressureArray3Reading+" kPa");
-								++index3;
+								index3++;
 							}
 							else if(i==3)
 							{
-								randomPressureArray4[index4]=randomObject.nextInt(300-200)+200;
-								String randomPressureArray4Reading=Integer.toString(randomPressureArray4[index4]);
+								randomPressureArray4.add(randomObject.nextInt(300-200)+200);
+								String randomPressureArray4Reading=Integer.toString(randomPressureArray4.get(index4));
 								pressure4Reading.setText(randomPressureArray4Reading+" kPa");
-								++index4;
+								index4++;
 							}
 						}
 					}
@@ -183,8 +181,26 @@ public class capstoneProject
 					FileWriter fileWriterObject=new FileWriter("RecordedValues.txt", true);
 					for(int i=0; i<=randomPressureArray1.size()-1; i++)
 					{
-						System.out.println("The recorded value is "+randomPressureArray1.get(i));
-						fileWriterObject.write(randomPressureArray1.get(i));
+						String randomPressureArray1StringValue=Integer.toString(randomPressureArray1.get(i));
+						fileWriterObject.write("Pressure sensor 1 Recording "+i+": "+randomPressureArray1StringValue+" kPa");
+						fileWriterObject.write("\n");
+					}
+					for(int i=0; i<=randomPressureArray2.size()-1; i++)
+					{
+						String randomPressureArray2StringValue=Integer.toString(randomPressureArray2.get(i));
+						fileWriterObject.write("Pressure sensor 2 Recording "+i+": "+randomPressureArray2StringValue+" kPa");
+						fileWriterObject.write("\n");
+					}
+					for(int i=0; i<=randomPressureArray3.size()-1; i++)
+					{
+						String randomPressureArray3StringValue=Integer.toString(randomPressureArray3.get(i));
+						fileWriterObject.write("Pressure sensor 3 Recording "+i+": "+randomPressureArray3StringValue+" kPa");
+						fileWriterObject.write("\n");
+					}
+					for(int i=0; i<=randomPressureArray4.size()-1; i++)
+					{
+						String randomPressureArray4StringValue=Integer.toString(randomPressureArray4.get(i));
+						fileWriterObject.write("Pressure sensor 4 Recording "+i+": "+randomPressureArray4StringValue+" kPa");
 						fileWriterObject.write("\n");
 					}
 					fileWriterObject.close();

@@ -110,6 +110,28 @@ public class capstoneProject
 		aboutButton.setBackground(new Color(90, 173, 237));
 		frameObject.add(aboutButton);
 		
+		JLabel helpDescriptionLabel1=new JLabel();
+		helpDescriptionLabel1.setText(" ");
+		helpDescriptionLabel1.setBounds(50, 400, 1000, 100);
+		
+		JLabel helpDescriptionLabel2=new JLabel();
+		helpDescriptionLabel2.setText(" ");
+		helpDescriptionLabel2.setBounds(50, 420, 1000, 100);
+
+		JLabel helpDescriptionLabel3=new JLabel();
+		helpDescriptionLabel3.setText(" ");
+		helpDescriptionLabel3.setBounds(50, 440, 1000, 100);
+		
+		JLabel aboutDescriptionLabel=new JLabel();
+		aboutDescriptionLabel.setText(" ");
+		aboutDescriptionLabel.setBounds(50, 500, 1000, 100);
+		
+		panelObject.add(helpDescriptionLabel1);
+		panelObject.add(helpDescriptionLabel2);
+		panelObject.add(helpDescriptionLabel3);
+		
+		panelObject.add(aboutDescriptionLabel);
+		
 		frameObject.add(panelObject);
 		frameObject.setSize(700,700);
 		frameObject.setVisible(true);
@@ -508,6 +530,22 @@ public class capstoneProject
 				plottingFrameObject4.add(plottingPanelObject4);
 				plottingFrameObject4.setSize(700,700);
 				plottingFrameObject4.setVisible(true);
+			}
+		});
+		helpButton.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+				helpDescriptionLabel1.setText("To record data, please press the 'record' button above. Once data has been recorded");
+				helpDescriptionLabel2.setText("you may press the 'Export to file' button in order for the recorded values to be saved  and written to a file.");
+				helpDescriptionLabel3.setText("After data has been recorded you may also press the 'Plot Data' button to view the plots for all recorded sensor values.");
+			}
+		});
+		aboutButton.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+				aboutDescriptionLabel.setText("Software used to record and display values for pressure and acceleration.");
 			}
 		});
 	}

@@ -10,295 +10,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.awt.geom.Ellipse2D;
 
-class graphingPanel extends JPanel
-{
-	public void computation(int i)
-	{
-		
-	}
-	@Override
-	public void paintComponent(Graphics g)
-	{
-		Graphics2D graphicsObject= (Graphics2D) g;
-		//drawing the two different axes
-		graphicsObject.drawLine(50, 0, 50, 400);
-		graphicsObject.drawLine(50, 400, 400, 400);
-		//drawing the x axes points
-		graphicsObject.drawLine(50, 400, 50, 410);
-		graphicsObject.drawLine(100, 400, 100, 410);
-		graphicsObject.drawLine(150, 400, 150, 410);
-		graphicsObject.drawLine(200, 400, 200, 410);
-		graphicsObject.drawLine(250, 400, 250, 410);
-		graphicsObject.drawLine(300, 400, 300, 410);
-		graphicsObject.drawLine(350, 400, 350, 410);
-		graphicsObject.drawLine(400, 400, 400, 410);
-		//drawing the y axes points
-		graphicsObject.drawLine(40, 350, 50, 350);
-		graphicsObject.drawLine(40, 300, 50, 300);
-		graphicsObject.drawLine(40, 250, 50, 250);
-		graphicsObject.drawLine(40, 200, 50, 200);
-		graphicsObject.drawLine(40, 150, 50, 150);
-		graphicsObject.drawLine(40, 100, 50, 100);
-		graphicsObject.drawLine(40, 50, 50, 50);
-		graphicsObject.drawLine(40, 5, 50, 5);
-		capstoneProject capstoneProjectObject=new capstoneProject();
-		for( int i=0; i<=capstoneProjectObject.randomPressureArray1.size()-1; i++)
-		{
-			if(i==0)
-			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(50, 325,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(50, 275,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(50, 225,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(50, 175,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(50, 125,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(50, 75,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(50, 25,10,10));
-				}
-			}
-			else if(i==1)
-			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(100, 325,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(100, 275,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(100, 225,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(100, 175,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(100, 125,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(100, 75,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(100, 25,10,10));
-				}
-			}
-			else if(i==2)
-			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(150, 325,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(150, 275,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(150, 225,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(150, 175,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(150, 125,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(150, 75,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(150, 25,10,10));
-				}
-			}
-			else if(i==3)
-			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(200, 325,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(200, 275,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(200, 225,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(200, 175,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(200, 125,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(200, 75,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(200, 25,10,10));
-				}
-			}
-			else if(i==4)
-			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(250, 325,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(250, 275,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(250, 225,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(250, 175,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(250, 125,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(250, 75,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(250, 25,10,10));
-				}
-			}
-			else if(i==5)
-			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(300, 325,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(300, 275,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(300, 225,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(300, 175,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(300, 125,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(300, 75,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(300, 25,10,10));
-				}
-			}
-			else if(i==6)
-			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(350, 325,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(350, 275,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(350, 225,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(350, 175,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(350, 125,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(350, 75,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(350, 25,10,10));
-				}
-			}
-			else if(i==7)
-			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(400, 325,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(400, 275,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(400, 225,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(400, 175,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(400, 125,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(400, 75,10,10));
-				}
-				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
-				{
-					graphicsObject.draw(new Ellipse2D.Double(400, 25,10,10));
-				}
-			}
-		}
-	}
-}
 
 public class capstoneProject
 {
 	static ArrayList<Integer> randomPressureArray1=new ArrayList<Integer>(100);
+	static ArrayList<Integer> randomPressureArray2=new ArrayList<Integer>(100);
+	static ArrayList<Integer> randomPressureArray3=new ArrayList<Integer>(100);
+	static ArrayList<Integer> randomPressureArray4=new ArrayList<Integer>(100);
 	public static void main(String[] args)
 	{
 		JFrame frameObject=new JFrame("Capstone Project");
@@ -398,9 +116,9 @@ public class capstoneProject
 		
 		Random randomObject=new Random();
 		//ArrayList<Integer> randomPressureArray1=new ArrayList<Integer>(100);
-		ArrayList<Integer> randomPressureArray2=new ArrayList<Integer>(100);
-		ArrayList<Integer> randomPressureArray3=new ArrayList<Integer>(100);
-		ArrayList<Integer> randomPressureArray4=new ArrayList<Integer>(100);
+		//ArrayList<Integer> randomPressureArray2=new ArrayList<Integer>(100);
+		//ArrayList<Integer> randomPressureArray3=new ArrayList<Integer>(100);
+		//ArrayList<Integer> randomPressureArray4=new ArrayList<Integer>(100);
 		recordButton.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e)
@@ -503,77 +221,293 @@ public class capstoneProject
         {
             public void actionPerformed(ActionEvent e)
             {
-				JFrame plottingFrameObject=new JFrame("Plot");
-				plottingFrameObject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				graphingPanel plottingPanelObject=new graphingPanel();
-				plottingPanelObject.setLayout(null);
-				JLabel positionZeroX = new JLabel();
-				positionZeroX.setText("0");
-				positionZeroX.setBounds(45,370,100,100);
-				JLabel positionOneX = new JLabel();
-				positionOneX.setText("1");
-				positionOneX.setBounds(95,370,100,100);
-				JLabel positionTwoX = new JLabel();
-				positionTwoX.setText("2");
-				positionTwoX.setBounds(145,370,100,100);
-				JLabel positionThreeX = new JLabel();
-				positionThreeX.setText("3");
-				positionThreeX.setBounds(195,370,100,100);
-				JLabel positionFourX = new JLabel();
-				positionFourX.setText("4");
-				positionFourX.setBounds(245,370,100,100);
-				JLabel positionFiveX = new JLabel();
-				positionFiveX.setText("5");
-				positionFiveX.setBounds(295,370,100,100);
-				JLabel positionSixX = new JLabel();
-				positionSixX.setText("6");
-				positionSixX.setBounds(345,370,100,100);
-				JLabel positionSevenX = new JLabel();
-				positionSevenX.setText("7");
-				positionSevenX.setBounds(395,370,100,100);
-				JLabel positionTwoHundredY = new JLabel();
-				positionTwoHundredY.setText("200");
-				positionTwoHundredY.setBounds(20,300,100,100);
-				JLabel positionTwoHundredTenY = new JLabel();
-				positionTwoHundredTenY.setText("210");
-				positionTwoHundredTenY.setBounds(20,250,100,100);
-				JLabel positionTwoHundredTwentyY = new JLabel();
-				positionTwoHundredTwentyY.setText("220");
-				positionTwoHundredTwentyY.setBounds(20,200,100,100);
-				JLabel positionTwoHundredThirtyY = new JLabel();
-				positionTwoHundredThirtyY.setText("230");
-				positionTwoHundredThirtyY.setBounds(20,150,100,100);
-				JLabel positionTwoHundredFourtyY = new JLabel();
-				positionTwoHundredFourtyY.setText("240");
-				positionTwoHundredFourtyY.setBounds(20,100,100,100);
-				JLabel positionTwoHundredFiftyY = new JLabel();
-				positionTwoHundredFiftyY.setText("250");
-				positionTwoHundredFiftyY.setBounds(20,50,100,100);
-				JLabel positionTwoHundredSixtyY = new JLabel();
-				positionTwoHundredSixtyY.setText("260");
-				positionTwoHundredSixtyY.setBounds(20,0,100,100);
-				JLabel positionTwoHundredSeventyY = new JLabel();
-				positionTwoHundredSeventyY.setText("270");
-				positionTwoHundredSeventyY.setBounds(20,-40,100,100);
-				plottingPanelObject.add(positionZeroX);
-				plottingPanelObject.add(positionOneX);
-				plottingPanelObject.add(positionTwoX);
-				plottingPanelObject.add(positionThreeX);
-				plottingPanelObject.add(positionFourX);
-				plottingPanelObject.add(positionFiveX);
-				plottingPanelObject.add(positionSixX);
-				plottingPanelObject.add(positionSevenX);
-				plottingPanelObject.add(positionTwoHundredY);
-				plottingPanelObject.add(positionTwoHundredTenY);
-				plottingPanelObject.add(positionTwoHundredTwentyY);
-				plottingPanelObject.add(positionTwoHundredThirtyY);
-				plottingPanelObject.add(positionTwoHundredFourtyY);
-				plottingPanelObject.add(positionTwoHundredFiftyY);
-				plottingPanelObject.add(positionTwoHundredSixtyY);
-				plottingPanelObject.add(positionTwoHundredSeventyY);
-				plottingFrameObject.add(plottingPanelObject);
-				plottingFrameObject.setSize(700,700);
-				plottingFrameObject.setVisible(true);
+				JFrame plottingFrameObject1=new JFrame("Pressure Sensor 1 Plot");
+				plottingFrameObject1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				graphingPanel1 plottingPanelObject1=new graphingPanel1();
+				plottingPanelObject1.setLayout(null);
+				JLabel positionZeroX1 = new JLabel();
+				positionZeroX1.setText("0");
+				positionZeroX1.setBounds(45,370,100,100);
+				JLabel positionOneX1 = new JLabel();
+				positionOneX1.setText("1");
+				positionOneX1.setBounds(95,370,100,100);
+				JLabel positionTwoX1 = new JLabel();
+				positionTwoX1.setText("2");
+				positionTwoX1.setBounds(145,370,100,100);
+				JLabel positionThreeX1 = new JLabel();
+				positionThreeX1.setText("3");
+				positionThreeX1.setBounds(195,370,100,100);
+				JLabel positionFourX1 = new JLabel();
+				positionFourX1.setText("4");
+				positionFourX1.setBounds(245,370,100,100);
+				JLabel positionFiveX1 = new JLabel();
+				positionFiveX1.setText("5");
+				positionFiveX1.setBounds(295,370,100,100);
+				JLabel positionSixX1 = new JLabel();
+				positionSixX1.setText("6");
+				positionSixX1.setBounds(345,370,100,100);
+				JLabel positionSevenX1 = new JLabel();
+				positionSevenX1.setText("7");
+				positionSevenX1.setBounds(395,370,100,100);
+				JLabel positionTwoHundredY1 = new JLabel();
+				positionTwoHundredY1.setText("200");
+				positionTwoHundredY1.setBounds(20,300,100,100);
+				JLabel positionTwoHundredTenY1 = new JLabel();
+				positionTwoHundredTenY1.setText("210");
+				positionTwoHundredTenY1.setBounds(20,250,100,100);
+				JLabel positionTwoHundredTwentyY1 = new JLabel();
+				positionTwoHundredTwentyY1.setText("220");
+				positionTwoHundredTwentyY1.setBounds(20,200,100,100);
+				JLabel positionTwoHundredThirtyY1 = new JLabel();
+				positionTwoHundredThirtyY1.setText("230");
+				positionTwoHundredThirtyY1.setBounds(20,150,100,100);
+				JLabel positionTwoHundredFourtyY1 = new JLabel();
+				positionTwoHundredFourtyY1.setText("240");
+				positionTwoHundredFourtyY1.setBounds(20,100,100,100);
+				JLabel positionTwoHundredFiftyY1 = new JLabel();
+				positionTwoHundredFiftyY1.setText("250");
+				positionTwoHundredFiftyY1.setBounds(20,50,100,100);
+				JLabel positionTwoHundredSixtyY1 = new JLabel();
+				positionTwoHundredSixtyY1.setText("260");
+				positionTwoHundredSixtyY1.setBounds(20,0,100,100);
+				JLabel positionTwoHundredSeventyY1 = new JLabel();
+				positionTwoHundredSeventyY1.setText("270");
+				positionTwoHundredSeventyY1.setBounds(20,-40,100,100);
+				plottingPanelObject1.add(positionZeroX1);
+				plottingPanelObject1.add(positionOneX1);
+				plottingPanelObject1.add(positionTwoX1);
+				plottingPanelObject1.add(positionThreeX1);
+				plottingPanelObject1.add(positionFourX1);
+				plottingPanelObject1.add(positionFiveX1);
+				plottingPanelObject1.add(positionSixX1);
+				plottingPanelObject1.add(positionSevenX1);
+				plottingPanelObject1.add(positionTwoHundredY1);
+				plottingPanelObject1.add(positionTwoHundredTenY1);
+				plottingPanelObject1.add(positionTwoHundredTwentyY1);
+				plottingPanelObject1.add(positionTwoHundredThirtyY1);
+				plottingPanelObject1.add(positionTwoHundredFourtyY1);
+				plottingPanelObject1.add(positionTwoHundredFiftyY1);
+				plottingPanelObject1.add(positionTwoHundredSixtyY1);
+				plottingPanelObject1.add(positionTwoHundredSeventyY1);
+				plottingFrameObject1.add(plottingPanelObject1);
+				plottingFrameObject1.setSize(700,700);
+				plottingFrameObject1.setVisible(true);
+				
+				JFrame plottingFrameObject2=new JFrame("Pressure Sensor 2 Plot");
+				plottingFrameObject2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				graphingPanel2 plottingPanelObject2=new graphingPanel2();
+				plottingPanelObject2.setLayout(null);
+				JLabel positionZeroX2 = new JLabel();
+				positionZeroX2.setText("0");
+				positionZeroX2.setBounds(45,370,100,100);
+				JLabel positionOneX2 = new JLabel();
+				positionOneX2.setText("1");
+				positionOneX2.setBounds(95,370,100,100);
+				JLabel positionTwoX2 = new JLabel();
+				positionTwoX2.setText("2");
+				positionTwoX2.setBounds(145,370,100,100);
+				JLabel positionThreeX2 = new JLabel();
+				positionThreeX2.setText("3");
+				positionThreeX2.setBounds(195,370,100,100);
+				JLabel positionFourX2 = new JLabel();
+				positionFourX2.setText("4");
+				positionFourX2.setBounds(245,370,100,100);
+				JLabel positionFiveX2 = new JLabel();
+				positionFiveX2.setText("5");
+				positionFiveX2.setBounds(295,370,100,100);
+				JLabel positionSixX2 = new JLabel();
+				positionSixX2.setText("6");
+				positionSixX2.setBounds(345,370,100,100);
+				JLabel positionSevenX2 = new JLabel();
+				positionSevenX2.setText("7");
+				positionSevenX2.setBounds(395,370,100,100);
+				JLabel positionTwoHundredY2 = new JLabel();
+				positionTwoHundredY2.setText("200");
+				positionTwoHundredY2.setBounds(20,300,100,100);
+				JLabel positionTwoHundredTenY2 = new JLabel();
+				positionTwoHundredTenY2.setText("210");
+				positionTwoHundredTenY2.setBounds(20,250,100,100);
+				JLabel positionTwoHundredTwentyY2 = new JLabel();
+				positionTwoHundredTwentyY2.setText("220");
+				positionTwoHundredTwentyY2.setBounds(20,200,100,100);
+				JLabel positionTwoHundredThirtyY2 = new JLabel();
+				positionTwoHundredThirtyY2.setText("230");
+				positionTwoHundredThirtyY2.setBounds(20,150,100,100);
+				JLabel positionTwoHundredFourtyY2 = new JLabel();
+				positionTwoHundredFourtyY2.setText("240");
+				positionTwoHundredFourtyY2.setBounds(20,100,100,100);
+				JLabel positionTwoHundredFiftyY2 = new JLabel();
+				positionTwoHundredFiftyY2.setText("250");
+				positionTwoHundredFiftyY2.setBounds(20,50,100,100);
+				JLabel positionTwoHundredSixtyY2 = new JLabel();
+				positionTwoHundredSixtyY2.setText("260");
+				positionTwoHundredSixtyY2.setBounds(20,0,100,100);
+				JLabel positionTwoHundredSeventyY2 = new JLabel();
+				positionTwoHundredSeventyY2.setText("270");
+				positionTwoHundredSeventyY2.setBounds(20,-40,100,100);
+				plottingPanelObject2.add(positionZeroX2);
+				plottingPanelObject2.add(positionOneX2);
+				plottingPanelObject2.add(positionTwoX2);
+				plottingPanelObject2.add(positionThreeX2);
+				plottingPanelObject2.add(positionFourX2);
+				plottingPanelObject2.add(positionFiveX2);
+				plottingPanelObject2.add(positionSixX2);
+				plottingPanelObject2.add(positionSevenX2);
+				plottingPanelObject2.add(positionTwoHundredY2);
+				plottingPanelObject2.add(positionTwoHundredTenY2);
+				plottingPanelObject2.add(positionTwoHundredTwentyY2);
+				plottingPanelObject2.add(positionTwoHundredThirtyY2);
+				plottingPanelObject2.add(positionTwoHundredFourtyY2);
+				plottingPanelObject2.add(positionTwoHundredFiftyY2);
+				plottingPanelObject2.add(positionTwoHundredSixtyY2);
+				plottingPanelObject2.add(positionTwoHundredSeventyY2);
+				plottingFrameObject2.add(plottingPanelObject2);
+				plottingFrameObject2.setSize(700,700);
+				plottingFrameObject2.setVisible(true);
+				
+				JFrame plottingFrameObject3=new JFrame("Pressure Sensor 3 Plot");
+				plottingFrameObject3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				graphingPanel3 plottingPanelObject3=new graphingPanel3();
+				plottingPanelObject3.setLayout(null);
+				JLabel positionZeroX3 = new JLabel();
+				positionZeroX3.setText("0");
+				positionZeroX3.setBounds(45,370,100,100);
+				JLabel positionOneX3 = new JLabel();
+				positionOneX3.setText("1");
+				positionOneX3.setBounds(95,370,100,100);
+				JLabel positionTwoX3 = new JLabel();
+				positionTwoX3.setText("2");
+				positionTwoX3.setBounds(145,370,100,100);
+				JLabel positionThreeX3 = new JLabel();
+				positionThreeX3.setText("3");
+				positionThreeX3.setBounds(195,370,100,100);
+				JLabel positionFourX3 = new JLabel();
+				positionFourX3.setText("4");
+				positionFourX3.setBounds(245,370,100,100);
+				JLabel positionFiveX3 = new JLabel();
+				positionFiveX3.setText("5");
+				positionFiveX3.setBounds(295,370,100,100);
+				JLabel positionSixX3 = new JLabel();
+				positionSixX3.setText("6");
+				positionSixX3.setBounds(345,370,100,100);
+				JLabel positionSevenX3 = new JLabel();
+				positionSevenX3.setText("7");
+				positionSevenX3.setBounds(395,370,100,100);
+				JLabel positionTwoHundredY3 = new JLabel();
+				positionTwoHundredY3.setText("200");
+				positionTwoHundredY3.setBounds(20,300,100,100);
+				JLabel positionTwoHundredTenY3 = new JLabel();
+				positionTwoHundredTenY3.setText("210");
+				positionTwoHundredTenY3.setBounds(20,250,100,100);
+				JLabel positionTwoHundredTwentyY3 = new JLabel();
+				positionTwoHundredTwentyY3.setText("220");
+				positionTwoHundredTwentyY3.setBounds(20,200,100,100);
+				JLabel positionTwoHundredThirtyY3 = new JLabel();
+				positionTwoHundredThirtyY3.setText("230");
+				positionTwoHundredThirtyY3.setBounds(20,150,100,100);
+				JLabel positionTwoHundredFourtyY3 = new JLabel();
+				positionTwoHundredFourtyY3.setText("240");
+				positionTwoHundredFourtyY3.setBounds(20,100,100,100);
+				JLabel positionTwoHundredFiftyY3 = new JLabel();
+				positionTwoHundredFiftyY3.setText("250");
+				positionTwoHundredFiftyY3.setBounds(20,50,100,100);
+				JLabel positionTwoHundredSixtyY3 = new JLabel();
+				positionTwoHundredSixtyY3.setText("260");
+				positionTwoHundredSixtyY3.setBounds(20,0,100,100);
+				JLabel positionTwoHundredSeventyY3 = new JLabel();
+				positionTwoHundredSeventyY3.setText("270");
+				positionTwoHundredSeventyY3.setBounds(20,-40,100,100);
+				plottingPanelObject3.add(positionZeroX3);
+				plottingPanelObject3.add(positionOneX3);
+				plottingPanelObject3.add(positionTwoX3);
+				plottingPanelObject3.add(positionThreeX3);
+				plottingPanelObject3.add(positionFourX3);
+				plottingPanelObject3.add(positionFiveX3);
+				plottingPanelObject3.add(positionSixX3);
+				plottingPanelObject3.add(positionSevenX3);
+				plottingPanelObject3.add(positionTwoHundredY3);
+				plottingPanelObject3.add(positionTwoHundredTenY3);
+				plottingPanelObject3.add(positionTwoHundredTwentyY3);
+				plottingPanelObject3.add(positionTwoHundredThirtyY3);
+				plottingPanelObject3.add(positionTwoHundredFourtyY3);
+				plottingPanelObject3.add(positionTwoHundredFiftyY3);
+				plottingPanelObject3.add(positionTwoHundredSixtyY3);
+				plottingPanelObject3.add(positionTwoHundredSeventyY3);
+				plottingFrameObject3.add(plottingPanelObject3);
+				plottingFrameObject3.setSize(700,700);
+				plottingFrameObject3.setVisible(true);
+				
+				JFrame plottingFrameObject4=new JFrame("Pressure Sensor 4 Plot");
+				plottingFrameObject4.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				graphingPanel4 plottingPanelObject4=new graphingPanel4();
+				plottingPanelObject4.setLayout(null);
+				JLabel positionZeroX4 = new JLabel();
+				positionZeroX4.setText("0");
+				positionZeroX4.setBounds(45,370,100,100);
+				JLabel positionOneX4 = new JLabel();
+				positionOneX4.setText("1");
+				positionOneX4.setBounds(95,370,100,100);
+				JLabel positionTwoX4 = new JLabel();
+				positionTwoX4.setText("2");
+				positionTwoX4.setBounds(145,370,100,100);
+				JLabel positionThreeX4 = new JLabel();
+				positionThreeX4.setText("3");
+				positionThreeX4.setBounds(195,370,100,100);
+				JLabel positionFourX4 = new JLabel();
+				positionFourX4.setText("4");
+				positionFourX4.setBounds(245,370,100,100);
+				JLabel positionFiveX4 = new JLabel();
+				positionFiveX4.setText("5");
+				positionFiveX4.setBounds(295,370,100,100);
+				JLabel positionSixX4 = new JLabel();
+				positionSixX4.setText("6");
+				positionSixX4.setBounds(345,370,100,100);
+				JLabel positionSevenX4 = new JLabel();
+				positionSevenX4.setText("7");
+				positionSevenX4.setBounds(395,370,100,100);
+				JLabel positionTwoHundredY4 = new JLabel();
+				positionTwoHundredY4.setText("200");
+				positionTwoHundredY4.setBounds(20,300,100,100);
+				JLabel positionTwoHundredTenY4 = new JLabel();
+				positionTwoHundredTenY4.setText("210");
+				positionTwoHundredTenY4.setBounds(20,250,100,100);
+				JLabel positionTwoHundredTwentyY4 = new JLabel();
+				positionTwoHundredTwentyY4.setText("220");
+				positionTwoHundredTwentyY4.setBounds(20,200,100,100);
+				JLabel positionTwoHundredThirtyY4 = new JLabel();
+				positionTwoHundredThirtyY4.setText("230");
+				positionTwoHundredThirtyY4.setBounds(20,150,100,100);
+				JLabel positionTwoHundredFourtyY4 = new JLabel();
+				positionTwoHundredFourtyY4.setText("240");
+				positionTwoHundredFourtyY4.setBounds(20,100,100,100);
+				JLabel positionTwoHundredFiftyY4 = new JLabel();
+				positionTwoHundredFiftyY4.setText("250");
+				positionTwoHundredFiftyY4.setBounds(20,50,100,100);
+				JLabel positionTwoHundredSixtyY4 = new JLabel();
+				positionTwoHundredSixtyY4.setText("260");
+				positionTwoHundredSixtyY4.setBounds(20,0,100,100);
+				JLabel positionTwoHundredSeventyY4 = new JLabel();
+				positionTwoHundredSeventyY4.setText("270");
+				positionTwoHundredSeventyY4.setBounds(20,-40,100,100);
+				plottingPanelObject4.add(positionZeroX4);
+				plottingPanelObject4.add(positionOneX4);
+				plottingPanelObject4.add(positionTwoX4);
+				plottingPanelObject4.add(positionThreeX4);
+				plottingPanelObject4.add(positionFourX4);
+				plottingPanelObject4.add(positionFiveX4);
+				plottingPanelObject4.add(positionSixX4);
+				plottingPanelObject4.add(positionSevenX4);
+				plottingPanelObject4.add(positionTwoHundredY4);
+				plottingPanelObject4.add(positionTwoHundredTenY4);
+				plottingPanelObject4.add(positionTwoHundredTwentyY4);
+				plottingPanelObject4.add(positionTwoHundredThirtyY4);
+				plottingPanelObject4.add(positionTwoHundredFourtyY4);
+				plottingPanelObject4.add(positionTwoHundredFiftyY4);
+				plottingPanelObject4.add(positionTwoHundredSixtyY4);
+				plottingPanelObject4.add(positionTwoHundredSeventyY4);
+				plottingFrameObject4.add(plottingPanelObject4);
+				plottingFrameObject4.setSize(700,700);
+				plottingFrameObject4.setVisible(true);
 			}
 		});
 	}

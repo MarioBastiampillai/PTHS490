@@ -9,8 +9,38 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+class graphingPanel extends JPanel
+{
+	public void computation(int i)
+	{
+		
+	}
+	@Override
+	public void paintComponent(Graphics g)
+	{
+		Graphics2D graphicsObject= (Graphics2D) g;
+		//drawing the two different axes
+		graphicsObject.drawLine(50, 50, 50, 400);
+		graphicsObject.drawLine(50, 400, 400, 400);
+		//drawing the x axes points
+		graphicsObject.drawLine(50, 400, 50, 410);
+		graphicsObject.drawLine(100, 400, 100, 410);
+		graphicsObject.drawLine(150, 400, 150, 410);
+		graphicsObject.drawLine(200, 400, 200, 410);
+		graphicsObject.drawLine(250, 400, 250, 410);
+		graphicsObject.drawLine(300, 400, 300, 410);
+		graphicsObject.drawLine(350, 400, 350, 410);
+		capstoneProject capstoneProjectObject=new capstoneProject();
+		for( int i=0; i<=capstoneProjectObject.randomPressureArray1.size()-1; i++)
+		{
+			System.out.println(capstoneProjectObject.randomPressureArray1.get(i));
+		}
+	}
+}
+
 public class capstoneProject
 {
+	static ArrayList<Integer> randomPressureArray1=new ArrayList<Integer>(100);
 	public static void main(String[] args)
 	{
 		JFrame frameObject=new JFrame("Capstone Project");
@@ -109,7 +139,7 @@ public class capstoneProject
 		frameObject.setVisible(true);
 		
 		Random randomObject=new Random();
-		ArrayList<Integer> randomPressureArray1=new ArrayList<Integer>(100);
+		//ArrayList<Integer> randomPressureArray1=new ArrayList<Integer>(100);
 		ArrayList<Integer> randomPressureArray2=new ArrayList<Integer>(100);
 		ArrayList<Integer> randomPressureArray3=new ArrayList<Integer>(100);
 		ArrayList<Integer> randomPressureArray4=new ArrayList<Integer>(100);
@@ -209,6 +239,35 @@ public class capstoneProject
 				{
 					w.printStackTrace();
 				}
+			}
+		});
+		plotDataButton.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+				JFrame plottingFrameObject=new JFrame("Plot");
+				plottingFrameObject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				graphingPanel plottingPanelObject=new graphingPanel();
+				plottingPanelObject.setLayout(null);
+				JLabel positionZeroX = new JLabel();
+				positionZeroX.setText("0");
+				positionZeroX.setBounds(45,370,100,100);
+				JLabel positionOneX = new JLabel();
+				positionOneX.setText("1");
+				positionOneX.setBounds(95,370,100,100);
+				JLabel positionTwoX = new JLabel();
+				positionTwoX.setText("2");
+				positionTwoX.setBounds(145,370,100,100);
+				JLabel positionThreeX = new JLabel();
+				positionThreeX.setText("3");
+				positionThreeX.setBounds(195,370,100,100);
+				plottingPanelObject.add(positionZeroX);
+				plottingPanelObject.add(positionOneX);
+				plottingPanelObject.add(positionTwoX);
+				plottingPanelObject.add(positionThreeX);
+				plottingFrameObject.add(plottingPanelObject);
+				plottingFrameObject.setSize(700,700);
+				plottingFrameObject.setVisible(true);
 			}
 		});
 	}

@@ -8,6 +8,7 @@ import java.util.TimerTask;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.awt.geom.Ellipse2D;
 
 class graphingPanel extends JPanel
 {
@@ -20,7 +21,7 @@ class graphingPanel extends JPanel
 	{
 		Graphics2D graphicsObject= (Graphics2D) g;
 		//drawing the two different axes
-		graphicsObject.drawLine(50, 50, 50, 400);
+		graphicsObject.drawLine(50, 0, 50, 400);
 		graphicsObject.drawLine(50, 400, 400, 400);
 		//drawing the x axes points
 		graphicsObject.drawLine(50, 400, 50, 410);
@@ -30,10 +31,267 @@ class graphingPanel extends JPanel
 		graphicsObject.drawLine(250, 400, 250, 410);
 		graphicsObject.drawLine(300, 400, 300, 410);
 		graphicsObject.drawLine(350, 400, 350, 410);
+		graphicsObject.drawLine(400, 400, 400, 410);
+		//drawing the y axes points
+		graphicsObject.drawLine(40, 350, 50, 350);
+		graphicsObject.drawLine(40, 300, 50, 300);
+		graphicsObject.drawLine(40, 250, 50, 250);
+		graphicsObject.drawLine(40, 200, 50, 200);
+		graphicsObject.drawLine(40, 150, 50, 150);
+		graphicsObject.drawLine(40, 100, 50, 100);
+		graphicsObject.drawLine(40, 50, 50, 50);
+		graphicsObject.drawLine(40, 5, 50, 5);
 		capstoneProject capstoneProjectObject=new capstoneProject();
 		for( int i=0; i<=capstoneProjectObject.randomPressureArray1.size()-1; i++)
 		{
-			System.out.println(capstoneProjectObject.randomPressureArray1.get(i));
+			if(i==0)
+			{
+				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(50, 325,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(50, 275,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(50, 225,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(50, 175,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(50, 125,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(50, 75,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(50, 25,10,10));
+				}
+			}
+			else if(i==1)
+			{
+				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(100, 325,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(100, 275,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(100, 225,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(100, 175,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(100, 125,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(100, 75,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(100, 25,10,10));
+				}
+			}
+			else if(i==2)
+			{
+				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(150, 325,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(150, 275,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(150, 225,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(150, 175,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(150, 125,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(150, 75,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(150, 25,10,10));
+				}
+			}
+			else if(i==3)
+			{
+				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(200, 325,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(200, 275,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(200, 225,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(200, 175,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(200, 125,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(200, 75,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(200, 25,10,10));
+				}
+			}
+			else if(i==4)
+			{
+				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(250, 325,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(250, 275,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(250, 225,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(250, 175,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(250, 125,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(250, 75,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(250, 25,10,10));
+				}
+			}
+			else if(i==5)
+			{
+				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(300, 325,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(300, 275,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(300, 225,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(300, 175,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(300, 125,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(300, 75,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(300, 25,10,10));
+				}
+			}
+			else if(i==6)
+			{
+				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(350, 325,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(350, 275,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(350, 225,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(350, 175,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(350, 125,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(350, 75,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(350, 25,10,10));
+				}
+			}
+			else if(i==7)
+			{
+				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(400, 325,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<220&&capstoneProjectObject.randomPressureArray1.get(i)>210)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(400, 275,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<230&&capstoneProjectObject.randomPressureArray1.get(i)>220)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(400, 225,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<240&&capstoneProjectObject.randomPressureArray1.get(i)>230)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(400, 175,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<250&&capstoneProjectObject.randomPressureArray1.get(i)>240)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(400, 125,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<260&&capstoneProjectObject.randomPressureArray1.get(i)>250)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(400, 75,10,10));
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<270&&capstoneProjectObject.randomPressureArray1.get(i)>260)
+				{
+					graphicsObject.draw(new Ellipse2D.Double(400, 25,10,10));
+				}
+			}
 		}
 	}
 }
@@ -171,28 +429,28 @@ public class capstoneProject
 						{
 							if(i==0)
 							{
-								randomPressureArray1.add(randomObject.nextInt(300-200)+200);
+								randomPressureArray1.add(randomObject.nextInt(270-200)+200); //was 300
 								String randomPressureArray1Reading=Integer.toString(randomPressureArray1.get(index1));
 								pressure1Reading.setText(randomPressureArray1Reading+" kPa");
 								index1++;
 							}
 							else if(i==1)
 							{
-								randomPressureArray2.add(randomObject.nextInt(300-200)+200);
+								randomPressureArray2.add(randomObject.nextInt(270-200)+200); //was 300
 								String randomPressureArray2Reading=Integer.toString(randomPressureArray2.get(index2));
 								pressure2Reading.setText(randomPressureArray2Reading+" kPa");
 								index2++;
 							}
 							else if(i==2)
 							{
-								randomPressureArray3.add(randomObject.nextInt(300-200)+200);
+								randomPressureArray3.add(randomObject.nextInt(270-200)+200); //was 300
 								String randomPressureArray3Reading=Integer.toString(randomPressureArray3.get(index3));
 								pressure3Reading.setText(randomPressureArray3Reading+" kPa");
 								index3++;
 							}
 							else if(i==3)
 							{
-								randomPressureArray4.add(randomObject.nextInt(300-200)+200);
+								randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 								String randomPressureArray4Reading=Integer.toString(randomPressureArray4.get(index4));
 								pressure4Reading.setText(randomPressureArray4Reading+" kPa");
 								index4++;
@@ -261,10 +519,58 @@ public class capstoneProject
 				JLabel positionThreeX = new JLabel();
 				positionThreeX.setText("3");
 				positionThreeX.setBounds(195,370,100,100);
+				JLabel positionFourX = new JLabel();
+				positionFourX.setText("4");
+				positionFourX.setBounds(245,370,100,100);
+				JLabel positionFiveX = new JLabel();
+				positionFiveX.setText("5");
+				positionFiveX.setBounds(295,370,100,100);
+				JLabel positionSixX = new JLabel();
+				positionSixX.setText("6");
+				positionSixX.setBounds(345,370,100,100);
+				JLabel positionSevenX = new JLabel();
+				positionSevenX.setText("7");
+				positionSevenX.setBounds(395,370,100,100);
+				JLabel positionTwoHundredY = new JLabel();
+				positionTwoHundredY.setText("200");
+				positionTwoHundredY.setBounds(20,300,100,100);
+				JLabel positionTwoHundredTenY = new JLabel();
+				positionTwoHundredTenY.setText("210");
+				positionTwoHundredTenY.setBounds(20,250,100,100);
+				JLabel positionTwoHundredTwentyY = new JLabel();
+				positionTwoHundredTwentyY.setText("220");
+				positionTwoHundredTwentyY.setBounds(20,200,100,100);
+				JLabel positionTwoHundredThirtyY = new JLabel();
+				positionTwoHundredThirtyY.setText("230");
+				positionTwoHundredThirtyY.setBounds(20,150,100,100);
+				JLabel positionTwoHundredFourtyY = new JLabel();
+				positionTwoHundredFourtyY.setText("240");
+				positionTwoHundredFourtyY.setBounds(20,100,100,100);
+				JLabel positionTwoHundredFiftyY = new JLabel();
+				positionTwoHundredFiftyY.setText("250");
+				positionTwoHundredFiftyY.setBounds(20,50,100,100);
+				JLabel positionTwoHundredSixtyY = new JLabel();
+				positionTwoHundredSixtyY.setText("260");
+				positionTwoHundredSixtyY.setBounds(20,0,100,100);
+				JLabel positionTwoHundredSeventyY = new JLabel();
+				positionTwoHundredSeventyY.setText("270");
+				positionTwoHundredSeventyY.setBounds(20,-40,100,100);
 				plottingPanelObject.add(positionZeroX);
 				plottingPanelObject.add(positionOneX);
 				plottingPanelObject.add(positionTwoX);
 				plottingPanelObject.add(positionThreeX);
+				plottingPanelObject.add(positionFourX);
+				plottingPanelObject.add(positionFiveX);
+				plottingPanelObject.add(positionSixX);
+				plottingPanelObject.add(positionSevenX);
+				plottingPanelObject.add(positionTwoHundredY);
+				plottingPanelObject.add(positionTwoHundredTenY);
+				plottingPanelObject.add(positionTwoHundredTwentyY);
+				plottingPanelObject.add(positionTwoHundredThirtyY);
+				plottingPanelObject.add(positionTwoHundredFourtyY);
+				plottingPanelObject.add(positionTwoHundredFiftyY);
+				plottingPanelObject.add(positionTwoHundredSixtyY);
+				plottingPanelObject.add(positionTwoHundredSeventyY);
 				plottingFrameObject.add(plottingPanelObject);
 				plottingFrameObject.setSize(700,700);
 				plottingFrameObject.setVisible(true);

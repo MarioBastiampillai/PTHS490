@@ -32,6 +32,18 @@ public class capstoneProject
 		titleLabel.setForeground(Color.white);
 		panelObject.add(titleLabel);
 		
+		JLabel numberOfRecordingsLabel1=new JLabel();
+		numberOfRecordingsLabel1.setText("Number of recordings:");
+		numberOfRecordingsLabel1.setBounds(50,70, 150, 100);
+		numberOfRecordingsLabel1.setForeground(Color.white);
+		panelObject.add(numberOfRecordingsLabel1);
+		
+		JLabel numberOfRecordingsValueLabel1=new JLabel();
+		numberOfRecordingsValueLabel1.setText(" ");
+		numberOfRecordingsValueLabel1.setBounds(200,70, 150, 100);
+		numberOfRecordingsValueLabel1.setForeground(Color.white);
+		panelObject.add(numberOfRecordingsValueLabel1);
+		
 		JLabel pressureLabel1=new JLabel();
 		pressureLabel1.setText("Pressure Reading 1:");
 		pressureLabel1.setBounds(50,100, 150, 100);
@@ -178,6 +190,7 @@ public class capstoneProject
 					int index2=0;
 					int index3=0;
 					int index4=0;
+					int recordingNumber=0;
 					@Override
 					public void run()
 					{
@@ -215,7 +228,10 @@ public class capstoneProject
 									String randomPressureArray4Reading=Integer.toString(randomPressureArray4.get(index4));
 									pressure4Reading.setText(randomPressureArray4Reading+" kPa");
 									index4++;
-								}
+									recordingNumber++;
+									String recordingNumberString=Integer.toString(recordingNumber);
+									numberOfRecordingsValueLabel1.setText(recordingNumberString);
+								}       
 							}
 						}
 					}

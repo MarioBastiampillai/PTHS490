@@ -7,12 +7,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.awt.geom.Ellipse2D;
 
 public class guiPanel extends JPanel
 {
-	@Override
+	@Override 
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
@@ -24,6 +24,15 @@ public class guiPanel extends JPanel
 		graphicsObject.drawRect(20, 95, 650, 100);
 		g.setColor(new Color(10, 25, 54));  //was 11, 29, 64
 		g.fillRect(20,95,650,100);
-		
+		graphicsObject.drawRect(20, 220, 650, 50);
+		g.setColor(new Color(44, 60, 92));  //was 11, 29, 64 
+		g.fillRect(20,220,650, 50);
+		graphicsObject.drawRect(20, 270, 650, 100);
+		g.setColor(new Color(10, 25, 54));  //was 11, 29, 64
+		g.fillRect(20,270,650,100);
+		//call function here to check whether recorded values are to be displayed
+		graphicsObject.drawRect(900, 325, 497, 45);
+		g.setColor(new Color(44, 60, 92));  //was 11, 29, 64
+		g.fillRect(900,325,497, 45);
 	}
 }

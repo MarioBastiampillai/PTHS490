@@ -18,6 +18,12 @@ public class capstoneProject
 	static ArrayList<Integer> randomPressureArray3=new ArrayList<Integer>(100);
 	static ArrayList<Integer> randomPressureArray4=new ArrayList<Integer>(100);
 	static boolean stopRecording=false;
+	static String recordingString=new String();
+	static JTextArea recordedValues=new JTextArea();
+	static JScrollPane recordedValuesScrollPane=new JScrollPane(recordedValues);
+	static int recordingNumber=0;
+
+
 	public static void main(String[] args)
 	{
 		JFrame frameObject=new JFrame("Capstone Project");
@@ -104,17 +110,41 @@ public class capstoneProject
 		accelerationValue.setForeground(Color.white);
 		panelObject.add(accelerationValue);
 		
+		JLabel controlButtonsLabel=new JLabel();
+		controlButtonsLabel.setText("Control Buttons:");
+		controlButtonsLabel.setBounds(50,190, 150, 100);
+		controlButtonsLabel.setForeground(Color.white);
+		panelObject.add(controlButtonsLabel);
+		
+		JLabel recordingsLabel=new JLabel();
+		recordingsLabel.setText("Recordings:");
+		recordingsLabel.setBounds(910,300, 150, 100);
+		recordingsLabel.setForeground(Color.white);
+		panelObject.add(recordingsLabel);
+		
 		JButton recordButton=new JButton();
 		recordButton.setText("Record");
-		recordButton.setBounds(200, 270, 100, 50);
+		recordButton.setBounds(55, 290, 100, 50);
 		recordButton.setBackground(new Color(90, 173, 237));
 		frameObject.add(recordButton);
 		
 		JButton stopRecordingButton=new JButton();
 		stopRecordingButton.setText("Stop Recording");
-		stopRecordingButton.setBounds(370, 270, 150, 50);
+		stopRecordingButton.setBounds(165, 290, 150, 50);
 		stopRecordingButton.setBackground(new Color(90, 173, 237));
 		frameObject.add(stopRecordingButton);
+		
+		JButton showRecordingsButton=new JButton();
+		showRecordingsButton.setText("Show recordings");
+		showRecordingsButton.setBounds(325, 290, 150, 50);
+		showRecordingsButton.setBackground(new Color(90, 173, 237));
+		frameObject.add(showRecordingsButton);
+		
+		JButton clearRecordingsButton=new JButton();
+		clearRecordingsButton.setText("Clear Recordings");
+		clearRecordingsButton.setBounds(490, 290, 150, 50);
+		clearRecordingsButton.setBackground(new Color(90, 173, 237));
+		frameObject.add(clearRecordingsButton);
 		
 		JButton exportToFileButton=new JButton();
 		exportToFileButton.setText("Export to file");
@@ -136,7 +166,7 @@ public class capstoneProject
 		
 		JButton aboutButton=new JButton();
 		aboutButton.setText("About");
-		aboutButton.setBounds(510, 0, 170, 25);
+		aboutButton.setBounds(510, 0, 180, 25);
 		aboutButton.setBackground(new Color(90, 173, 237));
 		frameObject.add(aboutButton);
 		
@@ -166,6 +196,7 @@ public class capstoneProject
 		frameObject.add(panelObject);
 		//frameObject.pack();
 		frameObject.setVisible(true);
+		frameObject.setResizable(false);
 		
 		Random randomObject=new Random();
 		//ArrayList<Integer> randomPressureArray1=new ArrayList<Integer>(100);
@@ -190,7 +221,6 @@ public class capstoneProject
 					int index2=0;
 					int index3=0;
 					int index4=0;
-					int recordingNumber=0;
 					@Override
 					public void run()
 					{
@@ -293,6 +323,7 @@ public class capstoneProject
             {
 				if(stopRecording==true&&randomPressureArray1.size()!=0&&randomPressureArray2.size()!=0&&randomPressureArray3.size()!=0&&randomPressureArray4.size()!=0)
 				{
+					frameObject.setSize(new Dimension(3000,1000));
 					JFrame plottingFrameObject1=new JFrame("Pressure Sensor 1 Plot");
 					plottingFrameObject1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					graphingPanel1 plottingPanelObject1=new graphingPanel1();
@@ -597,6 +628,63 @@ public class capstoneProject
             public void actionPerformed(ActionEvent e)
             {
 				aboutDescriptionLabel.setText("Software used to record and display values for pressure and acceleration.");
+			}
+		});
+		showRecordingsButton.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+				frameObject.setResizable(true);
+				frameObject.setSize(new Dimension(3000,1000));
+				for(int i=0; i<=randomPressureArray1.size()-1; i++)
+				{
+					String randomPressureArray1StringValue=Integer.toString(randomPressureArray1.get(i));
+					recordingString=recordingString+"Pressure sensor 1 Recording "+i+": "+randomPressureArray1StringValue+" kPa\n";
+					recordedValues.setText(recordingString);
+				}
+				for(int i=0; i<=randomPressureArray2.size()-1; i++)
+				{
+					String randomPressureArray2StringValue=Integer.toString(randomPressureArray2.get(i));
+					recordingString=recordingString+"Pressure sensor 2 Recording "+i+": "+randomPressureArray2StringValue+" kPa\n";
+					recordedValues.setText(recordingString);
+				}
+				for(int i=0; i<=randomPressureArray3.size()-1; i++)
+				{
+					String randomPressureArray3StringValue=Integer.toString(randomPressureArray3.get(i));
+					recordingString=recordingString+"Pressure sensor 3 Recording "+i+": "+randomPressureArray3StringValue+" kPa\n";
+					recordedValues.setText(recordingString);
+				}
+				for(int i=0; i<=randomPressureArray4.size()-1; i++)
+				{
+					String randomPressureArray4StringValue=Integer.toString(randomPressureArray4.get(i));
+					recordingString=recordingString+"Pressure sensor 4 Recording "+i+": "+randomPressureArray4StringValue+" kPa\n";
+					recordedValues.setText(recordingString);
+				}
+				recordedValues.setBackground(new Color(10, 25, 54));	//was new Color(90, 173, 237)
+				recordedValues.setForeground(Color.white);
+				recordedValues.setEditable(false);
+				recordedValuesScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+				recordedValuesScrollPane.setBounds(900, 370, 500, 400);
+				recordingsDisplay recordingsDisplayObject=new recordingsDisplay();
+				recordingsDisplayObject.recordingsDisplayBoolean=true;
+				panelObject.add(recordedValuesScrollPane);
+			}
+		});
+		clearRecordingsButton.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+				recordingString=null;
+				recordedValues.setText(recordingString);
+				frameObject.setSize(new Dimension(700,700));
+				frameObject.setResizable(false);
+				pressure1Reading.setText(" ");
+				pressure2Reading.setText(" ");
+				pressure3Reading.setText(" ");
+				pressure4Reading.setText(" ");
+				accelerationValue.setText(" ");
+				numberOfRecordingsValueLabel1.setText(" ");
+				recordingNumber=0;
 			}
 		});
 	}

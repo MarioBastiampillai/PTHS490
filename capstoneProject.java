@@ -800,6 +800,33 @@ public class capstoneProject
 					// plottingFrameObject4.setSize(700,700);
 					// plottingFrameObject4.setVisible(true);
 				}
+				if(dataCleared==true)
+				{
+					graphArea.setVisible(true);  
+					positionZeroX1.setVisible(false);
+					positionOneX1.setVisible(false);
+					positionTwoX1.setVisible(false);
+					positionThreeX1.setVisible(false);
+					positionFourX1.setVisible(false);
+					positionFiveX1.setVisible(false);
+					positionSixX1.setVisible(false);
+					positionSevenX1.setVisible(false);
+					positionTwoHundredY1.setVisible(false);
+					positionTwoHundredTenY1.setVisible(false);
+					positionTwoHundredTwentyY1.setVisible(false); 
+					positionTwoHundredThirtyY1.setVisible(false);
+					positionTwoHundredFourtyY1.setVisible(false);
+					positionTwoHundredFiftyY1.setVisible(false);
+					positionTwoHundredSixtyY1.setVisible(false);
+					positionTwoHundredSeventyY1.setVisible(false);
+					//xAxisTitle.setVisible(false);
+					//yAxisTitle.setVisible(false);
+					pressureSensor1Label.setVisible(false);
+					pressureSensor2Label.setVisible(false);
+					pressureSensor3Label.setVisible(false);
+					pressureSensor4Label.setVisible(false);
+					dataCleared=false;
+				}
 			}
 		});
 		helpButton.addActionListener(new ActionListener()

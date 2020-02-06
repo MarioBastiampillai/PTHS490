@@ -874,8 +874,19 @@ public class capstoneProject
 					pressureSensor2Label.setVisible(false);
 					pressureSensor3Label.setVisible(false);
 					pressureSensor4Label.setVisible(false);
+					
+					/*showRecordingsArea.setVisible(true);
+					panelObject.add(showRecordingsArea);
+					panelObject.remove(recordedValuesScrollPane);
+					panelObject.revalidate();
+					panelObject.repaint();*/
 					dataCleared=false;
 				}
+				if(randomPressureArray1.isEmpty()&&randomPressureArray2.isEmpty()&&randomPressureArray3.isEmpty()&&randomPressureArray4.isEmpty())
+				{
+					
+				}
+				else{
 				frameObject.setResizable(true);
 				frameObject.setSize(new Dimension(3000,1000));
 				recordingsLabel.setVisible(true);
@@ -883,6 +894,7 @@ public class capstoneProject
 				panelObject.remove(showRecordingsArea);
 				panelObject.revalidate();
 				panelObject.repaint();
+				}
 				for(int i=0; i<=randomPressureArray1.size()-1; i++)
 				{
 					String randomPressureArray1StringValue=Integer.toString(randomPressureArray1.get(i));

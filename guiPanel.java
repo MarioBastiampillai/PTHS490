@@ -75,13 +75,19 @@ public class guiPanel extends JPanel
 		graphicsObject.drawLine(890, 50, 900, 50);
 		graphicsObject.drawLine(890, 5, 900, 5);
 		
-		
+		//must put if statements in the case where 2 points overlap, lower one of them
+		//must include if statements for when the point is exactly on the y values
 		capstoneProject capstoneProjectObject=new capstoneProject();
 		for( int i=0; i<=capstoneProjectObject.randomPressureArray1.size()-1; i++)
 		{
 			if(i==0)
 			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray1.get(i)==200)
+				{
+					graphicsObject.setColor(Color.blue);
+					graphicsObject.fillOval(895, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
 				{
 					graphicsObject.setColor(Color.blue);
 					graphicsObject.fillOval(895, 325, 10, 10);	//was 50
@@ -119,7 +125,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==1)
 			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray1.get(i)==200)
+				{
+					graphicsObject.setColor(Color.blue);
+					graphicsObject.fillOval(945, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
 				{
 					graphicsObject.setColor(Color.blue);
 					graphicsObject.fillOval(945, 325, 10, 10);	//was 100
@@ -157,7 +168,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==2)
 			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray1.get(i)==200)
+				{
+					graphicsObject.setColor(Color.blue);
+					graphicsObject.fillOval(995, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
 				{
 					graphicsObject.setColor(Color.blue);
 					graphicsObject.fillOval(995, 325, 10, 10);
@@ -195,6 +211,11 @@ public class guiPanel extends JPanel
 			}
 			else if(i==3)
 			{
+				if(capstoneProjectObject.randomPressureArray1.get(i)==200)
+				{
+					graphicsObject.setColor(Color.blue);
+					graphicsObject.fillOval(1045, 375, 10, 10);	//was 50
+				}
 				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
 				{
 					graphicsObject.setColor(Color.blue);
@@ -233,7 +254,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==4)
 			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray1.get(i)==200)
+				{
+					graphicsObject.setColor(Color.blue);
+					graphicsObject.fillOval(1095, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
 				{
 					graphicsObject.setColor(Color.blue);
 					graphicsObject.fillOval(1095, 325, 10, 10);
@@ -271,7 +297,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==5)
 			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray1.get(i)==200)
+				{
+					graphicsObject.setColor(Color.blue);
+					graphicsObject.fillOval(1145, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
 				{
 					graphicsObject.setColor(Color.blue);
 					graphicsObject.fillOval(1145, 325, 10, 10);
@@ -309,7 +340,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==6)
 			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray1.get(i)==200)
+				{
+					graphicsObject.setColor(Color.blue);
+					graphicsObject.fillOval(1195, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
 				{
 					graphicsObject.setColor(Color.blue);
 					graphicsObject.fillOval(1195, 325, 10, 10);
@@ -347,7 +383,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==7)
 			{
-				if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray1.get(i)==200)
+				{
+					graphicsObject.setColor(Color.blue);
+					graphicsObject.fillOval(1245, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray1.get(i)<210&&capstoneProjectObject.randomPressureArray1.get(i)>200)
 				{
 					graphicsObject.setColor(Color.blue);
 					graphicsObject.fillOval(1245, 325, 10, 10);
@@ -388,6 +429,11 @@ public class guiPanel extends JPanel
 		{
 			if(i==0)
 			{
+				if(capstoneProjectObject.randomPressureArray2.get(i)==200)
+				{
+					graphicsObject.setColor(Color.green);
+					graphicsObject.fillOval(895, 375, 10, 10);	//was 50
+				}
 				if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
 				{
 					graphicsObject.setColor(Color.green);
@@ -426,7 +472,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==1)
 			{
-				if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray2.get(i)==200)
+				{
+					graphicsObject.setColor(Color.green);
+					graphicsObject.fillOval(895, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
 				{
 					graphicsObject.setColor(Color.green);
 					graphicsObject.fillOval(945, 325, 10, 10);
@@ -464,7 +515,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==2)
 			{
-				if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray2.get(i)==200)
+				{
+					graphicsObject.setColor(Color.green);
+					graphicsObject.fillOval(995, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
 				{
 					graphicsObject.setColor(Color.green);
 					graphicsObject.fillOval(995, 325, 10, 10);
@@ -502,7 +558,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==3)
 			{
-				if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray2.get(i)==200)
+				{
+					graphicsObject.setColor(Color.green);
+					graphicsObject.fillOval(1045, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
 				{
 					graphicsObject.setColor(Color.green);
 					graphicsObject.fillOval(1045, 325, 10, 10);
@@ -540,7 +601,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==4)
 			{
-				if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray2.get(i)==200)
+				{
+					graphicsObject.setColor(Color.green);
+					graphicsObject.fillOval(1095, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
 				{
 					graphicsObject.setColor(Color.green);
 					graphicsObject.fillOval(1095, 325, 10, 10);
@@ -578,7 +644,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==5)
 			{
-				if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray2.get(i)==200)
+				{
+					graphicsObject.setColor(Color.green);
+					graphicsObject.fillOval(1145, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
 				{
 					graphicsObject.setColor(Color.green);
 					graphicsObject.fillOval(1145, 325, 10, 10);
@@ -616,7 +687,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==6)
 			{
-				if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray2.get(i)==200)
+				{
+					graphicsObject.setColor(Color.green);
+					graphicsObject.fillOval(1195, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
 				{
 					graphicsObject.setColor(Color.green);
 					graphicsObject.fillOval(1195, 325, 10, 10);
@@ -654,7 +730,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==7)
 			{
-				if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray2.get(i)==200)
+				{
+					graphicsObject.setColor(Color.green);
+					graphicsObject.fillOval(1245, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray2.get(i)<210&&capstoneProjectObject.randomPressureArray2.get(i)>200)
 				{
 					graphicsObject.setColor(Color.green);
 					graphicsObject.fillOval(1245, 325, 10, 10);
@@ -691,11 +772,16 @@ public class guiPanel extends JPanel
 				}
 			}
 		}
-				for( int i=0; i<=capstoneProjectObject.randomPressureArray3.size()-1; i++)
+		for( int i=0; i<=capstoneProjectObject.randomPressureArray3.size()-1; i++)
 		{
 			if(i==0)
 			{
-				if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray3.get(i)==200)
+				{
+					graphicsObject.setColor(Color.gray);
+					graphicsObject.fillOval(895, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
 				{
 					graphicsObject.setColor(Color.gray);
 					graphicsObject.fillOval(895, 325, 10, 10);
@@ -733,7 +819,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==1)
 			{
-				if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray3.get(i)==200)
+				{
+					graphicsObject.setColor(Color.gray);
+					graphicsObject.fillOval(945, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
 				{
 					graphicsObject.setColor(Color.gray);
 					graphicsObject.fillOval(945, 325, 10, 10);
@@ -771,7 +862,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==2)
 			{
-				if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray3.get(i)==200)
+				{
+					graphicsObject.setColor(Color.gray);
+					graphicsObject.fillOval(995, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
 				{
 					graphicsObject.setColor(Color.gray);
 					graphicsObject.fillOval(995, 325, 10, 10);
@@ -809,7 +905,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==3)
 			{
-				if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray3.get(i)==200)
+				{
+					graphicsObject.setColor(Color.gray);
+					graphicsObject.fillOval(1045, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
 				{
 					graphicsObject.setColor(Color.gray);
 					graphicsObject.fillOval(1045, 325, 10, 10);
@@ -848,7 +949,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==4)
 			{
-				if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray3.get(i)==200)
+				{
+					graphicsObject.setColor(Color.gray);
+					graphicsObject.fillOval(1095, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
 				{
 					graphicsObject.setColor(Color.gray);
 					graphicsObject.fillOval(1095, 325, 10, 10);
@@ -886,7 +992,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==5)
 			{
-				if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray3.get(i)==200)
+				{
+					graphicsObject.setColor(Color.gray);
+					graphicsObject.fillOval(1145, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
 				{
 					graphicsObject.setColor(Color.gray);
 					graphicsObject.fillOval(1145, 325, 10, 10);
@@ -924,7 +1035,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==6)
 			{
-				if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray3.get(i)==200)
+				{
+					graphicsObject.setColor(Color.gray);
+					graphicsObject.fillOval(1195, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
 				{
 					graphicsObject.setColor(Color.gray);
 					graphicsObject.fillOval(1195, 325, 10, 10);
@@ -962,7 +1078,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==7)
 			{
-				if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray3.get(i)==200)
+				{
+					graphicsObject.setColor(Color.gray);
+					graphicsObject.fillOval(1245, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray3.get(i)<210&&capstoneProjectObject.randomPressureArray3.get(i)>200)
 				{
 					graphicsObject.setColor(Color.gray);
 					graphicsObject.fillOval(1245, 325, 10, 10);
@@ -1003,7 +1124,12 @@ public class guiPanel extends JPanel
 		{
 			if(i==0)
 			{
-				if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray4.get(i)==200)
+				{
+					graphicsObject.setColor(Color.cyan);
+					graphicsObject.fillOval(895, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
 				{
 					graphicsObject.setColor(Color.cyan);
 					graphicsObject.fillOval(895, 325, 10, 10);
@@ -1041,7 +1167,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==1)
 			{
-				if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray4.get(i)==200)
+				{
+					graphicsObject.setColor(Color.cyan);
+					graphicsObject.fillOval(895, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
 				{
 					graphicsObject.setColor(Color.cyan);
 					graphicsObject.fillOval(945, 325, 10, 10);
@@ -1079,7 +1210,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==2)
 			{
-				if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray4.get(i)==200)
+				{
+					graphicsObject.setColor(Color.cyan);
+					graphicsObject.fillOval(995, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
 				{
 					graphicsObject.setColor(Color.cyan);
 					graphicsObject.fillOval(995, 325, 10, 10);
@@ -1117,7 +1253,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==3)
 			{
-				if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray4.get(i)==200)
+				{
+					graphicsObject.setColor(Color.cyan);
+					graphicsObject.fillOval(1045, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
 				{
 					graphicsObject.setColor(Color.cyan);
 					graphicsObject.fillOval(1045, 325, 10, 10);
@@ -1155,7 +1296,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==4)
 			{
-				if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray4.get(i)==200)
+				{
+					graphicsObject.setColor(Color.cyan);
+					graphicsObject.fillOval(1095, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
 				{
 					graphicsObject.setColor(Color.cyan);
 					graphicsObject.fillOval(1095, 325, 10, 10);
@@ -1193,7 +1339,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==5)
 			{
-				if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray4.get(i)==200)
+				{
+					graphicsObject.setColor(Color.cyan);
+					graphicsObject.fillOval(1145, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
 				{
 					graphicsObject.setColor(Color.cyan);
 					graphicsObject.fillOval(1145, 325, 10, 10);
@@ -1231,7 +1382,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==6)
 			{
-				if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray4.get(i)==200)
+				{
+					graphicsObject.setColor(Color.cyan);
+					graphicsObject.fillOval(1195, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
 				{
 					graphicsObject.setColor(Color.cyan);
 					graphicsObject.fillOval(1195, 325, 10, 10);
@@ -1269,7 +1425,12 @@ public class guiPanel extends JPanel
 			}
 			else if(i==7)
 			{
-				if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
+				if(capstoneProjectObject.randomPressureArray4.get(i)==200)
+				{
+					graphicsObject.setColor(Color.cyan);
+					graphicsObject.fillOval(1245, 375, 10, 10);	//was 50
+				}
+				else if(capstoneProjectObject.randomPressureArray4.get(i)<210&&capstoneProjectObject.randomPressureArray4.get(i)>200)
 				{
 					graphicsObject.setColor(Color.cyan);
 					graphicsObject.fillOval(1245, 325, 10, 10);

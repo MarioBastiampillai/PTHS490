@@ -9,6 +9,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.awt.geom.Ellipse2D;
+import java.util.Iterator;
+import java.util.*;
 
 
 public class capstoneProject
@@ -17,6 +19,18 @@ public class capstoneProject
 	static ArrayList<Integer> randomPressureArray2=new ArrayList<Integer>(100);
 	static ArrayList<Integer> randomPressureArray3=new ArrayList<Integer>(100);
 	static ArrayList<Integer> randomPressureArray4=new ArrayList<Integer>(100);
+	static int totalRandomPressureArray1[]=new int[100];
+	static int totalRandomPressureArray2[]=new int[100];
+	static int totalRandomPressureArray3[]=new int[100];
+	static int totalRandomPressureArray4[]=new int[100];
+	static ArrayList<Integer> temporaryRandomPressureArray1=new ArrayList<Integer>(100);
+	static ArrayList<Integer> temporaryRandomPressureArray2=new ArrayList<Integer>(100);
+	static ArrayList<Integer> temporaryRandomPressureArray3=new ArrayList<Integer>(100);
+	static ArrayList<Integer> temporaryRandomPressureArray4=new ArrayList<Integer>(100);
+	static HashMap<Integer, Integer> randomPressureArray1HashMap=new HashMap<Integer, Integer>();
+	static HashMap<Integer, Integer> randomPressureArray2HashMap=new HashMap<Integer, Integer>();
+	static HashMap<Integer, Integer> randomPressureArray3HashMap=new HashMap<Integer, Integer>();
+	static HashMap<Integer, Integer> randomPressureArray4HashMap=new HashMap<Integer, Integer>();
 	static boolean stopRecording=false;
 	static String recordingString=new String();
 	static JTextArea recordedValues=new JTextArea();
@@ -327,6 +341,7 @@ public class capstoneProject
 		//ArrayList<Integer> randomPressureArray2=new ArrayList<Integer>(100);
 		//ArrayList<Integer> randomPressureArray3=new ArrayList<Integer>(100);
 		//ArrayList<Integer> randomPressureArray4=new ArrayList<Integer>(100);
+		Iterator temporaryRandomPressureArray1Iterator=temporaryRandomPressureArray1.iterator();
 		recordButton.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e)
@@ -357,6 +372,50 @@ public class capstoneProject
 							{
 								if(i==0)
 								{
+									//assuming 100 samples/sec for each sensor
+									for(int w=0; w<=99; w++)
+									{
+										//generate 100 random samples 
+										totalRandomPressureArray1[w]=randomObject.nextInt(270-200)+200;
+									}
+									for(int j=0; j<totalRandomPressureArray1.length-1; j++)
+									{
+										for(int l=i; l<totalRandomPressureArray1.length; l++)
+										{
+											if(totalRandomPressureArray1[l]<totalRandomPressureArray1[j])
+											{
+												int smallestNumber=totalRandomPressureArray1[l];
+												totalRandomPressureArray1[l]=totalRandomPressureArray1[j];
+												totalRandomPressureArray1[j]=smallestNumber;
+											}
+										}
+									}
+									int begin=0;
+									int last=totalRandomPressureArray1.length-1;
+									int middle=0;
+									while(begin<=last)
+									{
+										middle=(begin+last)/2;
+										if(totalRandomPressureArray1[middle+1]>totalRandomPressureArray1[middle])
+										{
+											//collect all the similar values
+											for(int m=begin;  m<=middle; m++)
+											{
+												//store in a temporary arraylist
+												temporaryRandomPressureArray1.add(totalRandomPressureArray1[m]);
+											}
+											while(temporaryRandomPressureArray1Iterator.hasNext())
+											{
+												//count number of elements
+												int count=temporaryRandomPressureArray1.size();
+												randomPressureArray1HashMap.put(temporaryRandomPressureArray1.get(0), count);
+											}
+											begin=middle+1;
+										}
+									}
+									//The randomPressureArray1Reading string should contain the final chosen value after the algorithm has performed
+									//its selection during that particular second
+									//iterate through HashMap to calculate the average or mode, depending on what is wanted
 									randomPressureArray1.add(randomObject.nextInt(270-200)+200); //was 300
 									String randomPressureArray1Reading=Integer.toString(randomPressureArray1.get(index1));
 									pressure1Reading.setText(randomPressureArray1Reading+" kPa");

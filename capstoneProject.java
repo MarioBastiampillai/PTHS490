@@ -27,6 +27,7 @@ public class capstoneProject
 
 	public static void main(String[] args)
 	{
+		System.out.println("hello");
 		JFrame frameObject=new JFrame("Capstone Project");
 		frameObject.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		guiPanel panelObject=new guiPanel();	//was JPanel

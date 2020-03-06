@@ -15,18 +15,62 @@ import java.util.*;
 
 public class capstoneProject
 {
-	static ArrayList<Integer> randomPressureArray1=new ArrayList<Integer>(100);
-	static ArrayList<Integer> randomPressureArray2=new ArrayList<Integer>(100);
-	static ArrayList<Integer> randomPressureArray3=new ArrayList<Integer>(100);
-	static ArrayList<Integer> randomPressureArray4=new ArrayList<Integer>(100);
-	static int totalRandomPressureArray1[]=new int[100];
-	static int totalRandomPressureArray2[]=new int[100];
-	static int totalRandomPressureArray3[]=new int[100];
-	static int totalRandomPressureArray4[]=new int[100];
-	static ArrayList<Integer> temporaryRandomPressureArray1=new ArrayList<Integer>(100);
-	static ArrayList<Integer> temporaryRandomPressureArray2=new ArrayList<Integer>(100);
-	static ArrayList<Integer> temporaryRandomPressureArray3=new ArrayList<Integer>(100);
-	static ArrayList<Integer> temporaryRandomPressureArray4=new ArrayList<Integer>(100);
+	//used to hold the final average value per 25 ms for each sensor, can hold up to 1000 values, used for the log
+	static ArrayList<Integer> randomPressureArray1=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray2=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray3=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray4=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray5=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray6=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray7=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray8=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray9=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray10=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray11=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray12=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray13=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray14=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray15=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray16=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray17=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray18=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray19=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray20=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray21=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray22=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray23=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> randomPressureArray24=new ArrayList<Integer>(1000);
+	//used to hold the initial 1000 values per 25 for each sensor, before calculation of the average
+	static int totalRandomPressureArray1[]=new int[10];
+	static int totalRandomPressureArray2[]=new int[10];
+	static int totalRandomPressureArray3[]=new int[10];
+	static int totalRandomPressureArray4[]=new int[10];
+	static int totalRandomPressureArray5[]=new int[1000];
+	static int totalRandomPressureArray6[]=new int[1000];
+	static int totalRandomPressureArray7[]=new int[1000];
+	static int totalRandomPressureArray8[]=new int[1000];
+	static int totalRandomPressureArray9[]=new int[1000];
+	static int totalRandomPressureArray10[]=new int[1000];
+	static int totalRandomPressureArray11[]=new int[1000];
+	static int totalRandomPressureArray12[]=new int[1000];
+	static int totalRandomPressureArray13[]=new int[1000];
+	static int totalRandomPressureArray14[]=new int[1000];
+	static int totalRandomPressureArray15[]=new int[1000];
+	static int totalRandomPressureArray16[]=new int[1000];
+	static int totalRandomPressureArray17[]=new int[1000];
+	static int totalRandomPressureArray18[]=new int[1000];
+	static int totalRandomPressureArray19[]=new int[1000];
+	static int totalRandomPressureArray20[]=new int[1000];
+	static int totalRandomPressureArray21[]=new int[1000];
+	static int totalRandomPressureArray22[]=new int[1000];
+	static int totalRandomPressureArray23[]=new int[1000];
+	static int totalRandomPressureArray24[]=new int[1000];
+	//used to hold all similar numbers to determine the mode, or most often occuring number
+	static ArrayList<Integer> temporaryRandomPressureArray1=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> temporaryRandomPressureArray2=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> temporaryRandomPressureArray3=new ArrayList<Integer>(1000);
+	static ArrayList<Integer> temporaryRandomPressureArray4=new ArrayList<Integer>(1000);
+	//used to determine the mode, or most often occuring number
 	static HashMap<Integer, Integer> randomPressureArray1HashMap=new HashMap<Integer, Integer>();
 	static HashMap<Integer, Integer> randomPressureArray2HashMap=new HashMap<Integer, Integer>();
 	static HashMap<Integer, Integer> randomPressureArray3HashMap=new HashMap<Integer, Integer>();
@@ -38,6 +82,7 @@ public class capstoneProject
 	static int recordingNumber=0;
 	static boolean plotDataEnable=false;
 	static boolean dataCleared=false;
+	static int highestCountKey=0;
 
 	public static void main(String[] args)
 	{
@@ -360,6 +405,9 @@ public class capstoneProject
 					int index2=0;
 					int index3=0;
 					int index4=0;
+					//in the event that the averages must be calculated in parallel and not one after the other due to time constraint
+					int total1, total2, total3, total4, total5, total6, total7, total8, total9, total10, total11, total12, total13, total14, total15, total16, total17, total18, total19, total20, total21, total22, total23, total24=0;
+					int average1, average2, average3, average4, average5, average6, average7, average8, average9, average10, average11, average12, average13, average14, average15, average16, average17, average18, average19, average20, average21, average22, average23, average24=0;
 					@Override
 					public void run()
 					{
@@ -368,16 +416,31 @@ public class capstoneProject
 							int randomAcceleration=randomObject.nextInt(500-100)+100;
 							String randomAccelerationString=Integer.toString(randomAcceleration)+"m/s^2";
 							accelerationValue.setText(randomAccelerationString);
-							for(int i=0; i<=3; i++)
+							for(int i=0; i<=23; i++)	//was initially 0 to 3, which was chosen since the program was initially tested for 4 sensors
 							{
 								if(i==0)
 								{
 									//assuming 100 samples/sec for each sensor
-									for(int w=0; w<=99; w++)
+									for(int w=0; w<=9; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
 									{
-										//generate 100 random samples 
+										//generate 1000 random samples 
 										totalRandomPressureArray1[w]=randomObject.nextInt(270-200)+200;
 									}
+									for(int indexSensor1=0; indexSensor1<=totalRandomPressureArray1.length-1; indexSensor1++)
+									{
+										System.out.println("The current value for sensor 1 is"+totalRandomPressureArray1[indexSensor1]+" at index "+indexSensor1);
+										total1=total1+totalRandomPressureArray1[indexSensor1];
+										if(indexSensor1==totalRandomPressureArray1.length-1)
+										{
+											average1=total1/(indexSensor1+1);
+											System.out.println("The average value for sensor 1 is"+average1);
+											randomPressureArray1.add(average1);
+											average1=0;
+											total1=0;
+										}
+									}
+									/*
+									//code for calculating the mode or most often appearing number
 									for(int j=0; j<totalRandomPressureArray1.length-1; j++)
 									{
 										for(int l=i; l<totalRandomPressureArray1.length; l++)
@@ -416,28 +479,93 @@ public class capstoneProject
 									//The randomPressureArray1Reading string should contain the final chosen value after the algorithm has performed
 									//its selection during that particular second
 									//iterate through HashMap to calculate the average or mode, depending on what is wanted
-									randomPressureArray1.add(randomObject.nextInt(270-200)+200); //was 300
-									String randomPressureArray1Reading=Integer.toString(randomPressureArray1.get(index1));
+									for(int z: randomPressureArray1HashMap.keySet())
+									{
+										//in the case where the number with the highest count is chosen (mode)
+										//order the entries from lest to greatest count and select the last entry
+										if(randomPressureArray1HashMap.get(z)>randomPressureArray1HashMap.get(z+1))
+										{
+											highestCountKey=z;
+										}
+									}
+									//end of mode calculation algorithm
+									*/
+									//randomPressureArray1.add(randomObject.nextInt(270-200)+200); //was 300
+									String randomPressureArray1Reading=Integer.toString(randomPressureArray1.get(index1));	//should put highestCountKey
 									pressure1Reading.setText(randomPressureArray1Reading+" kPa");
 									index1++;
 								}
 								else if(i==1)
 								{
-									randomPressureArray2.add(randomObject.nextInt(270-200)+200); //was 300
+									for(int w=0; w<=9; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									{
+										//generate 1000 random samples 
+										totalRandomPressureArray2[w]=randomObject.nextInt(270-200)+200;
+									}
+									for(int indexSensor2=0; indexSensor2<=totalRandomPressureArray2.length-1; indexSensor2++)
+									{
+										total2=total2+totalRandomPressureArray2[indexSensor2];
+										if(indexSensor2==totalRandomPressureArray2.length-1)
+										{
+											average2=total2/(indexSensor2+1);
+											System.out.println("The average value for sensor 2 is"+average2); 
+											//store the average value in the randomPressureArray2 arraylist
+											randomPressureArray2.add(average2);
+											average2=0;
+											total2=0;
+										}
+									}
+									//randomPressureArray2.add(randomObject.nextInt(270-200)+200); //was 300
 									String randomPressureArray2Reading=Integer.toString(randomPressureArray2.get(index2));
 									pressure2Reading.setText(randomPressureArray2Reading+" kPa");
 									index2++;
 								}
 								else if(i==2)
 								{
-									randomPressureArray3.add(randomObject.nextInt(270-200)+200); //was 300
+									for(int w=0; w<=9; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									{
+										//generate 1000 random samples 
+										totalRandomPressureArray3[w]=randomObject.nextInt(270-200)+200;
+									}
+									for(int indexSensor3=0; indexSensor3<=totalRandomPressureArray2.length-1; indexSensor3++)
+									{
+										total3=total3+totalRandomPressureArray3[indexSensor3];
+										if(indexSensor3==totalRandomPressureArray3.length-1)
+										{
+											average3=total3/(indexSensor3+1);
+											System.out.println("The average value for sensor 3 is"+average3);
+											//store the average value in the randomPressureArray2 arraylist
+											randomPressureArray3.add(average3);
+											average3=0;
+											total3=0;
+										}
+									}
+									//randomPressureArray3.add(randomObject.nextInt(270-200)+200); //was 300
 									String randomPressureArray3Reading=Integer.toString(randomPressureArray3.get(index3));
 									pressure3Reading.setText(randomPressureArray3Reading+" kPa");
 									index3++;
 								}
 								else if(i==3)
 								{
-									randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
+									for(int w=0; w<=9; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									{
+										//generate 1000 random samples 
+										totalRandomPressureArray4[w]=randomObject.nextInt(270-200)+200;
+									}
+									for(int indexSensor4=0; indexSensor4<=totalRandomPressureArray4.length-1; indexSensor4++)
+									{
+										total4=total4+totalRandomPressureArray4[indexSensor4];
+										if(indexSensor4==totalRandomPressureArray4.length-1)
+										{
+											average4=total4/(indexSensor4+1);
+											System.out.println("The average value for sensor 4 is"+average4);
+											//store the average value in the randomPressureArray2 arraylist
+											randomPressureArray4.add(average4);
+											average4=0;
+											total4=0;
+										}
+									}
+									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray4Reading=Integer.toString(randomPressureArray4.get(index4));
 									pressure4Reading.setText(randomPressureArray4Reading+" kPa");
 									index4++;
@@ -448,7 +576,7 @@ public class capstoneProject
 							}
 						}
 					}
-				}, 0, 5000);
+				}, 0, 25);	//was 5000 for 5 seconds, not 25 ms
 				
 			}
 		});

@@ -41,10 +41,10 @@ public class capstoneProject
 	static ArrayList<Integer> randomPressureArray23=new ArrayList<Integer>(1000);
 	static ArrayList<Integer> randomPressureArray24=new ArrayList<Integer>(1000);
 	//used to hold the initial 1000 values per 25 for each sensor, before calculation of the average
-	static int totalRandomPressureArray1[]=new int[10];
-	static int totalRandomPressureArray2[]=new int[10];
-	static int totalRandomPressureArray3[]=new int[10];
-	static int totalRandomPressureArray4[]=new int[10];
+	static int totalRandomPressureArray1[]=new int[1000];
+	static int totalRandomPressureArray2[]=new int[1000];
+	static int totalRandomPressureArray3[]=new int[1000];
+	static int totalRandomPressureArray4[]=new int[1000];
 	static int totalRandomPressureArray5[]=new int[1000];
 	static int totalRandomPressureArray6[]=new int[1000];
 	static int totalRandomPressureArray7[]=new int[1000];
@@ -421,7 +421,7 @@ public class capstoneProject
 								if(i==0)
 								{
 									//assuming 100 samples/sec for each sensor
-									for(int w=0; w<=9; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray1[w]=randomObject.nextInt(270-200)+200;
@@ -439,11 +439,15 @@ public class capstoneProject
 											total1=0;
 										}
 									}
+									//randomPressureArray1.add(randomObject.nextInt(270-200)+200); //was 300
+									String randomPressureArray1Reading=Integer.toString(randomPressureArray1.get(index1));	//should put highestCountKey
+									pressure1Reading.setText(randomPressureArray1Reading+" kPa");
+									index1++;
 									/*
 									//code for calculating the mode or most often appearing number
 									for(int j=0; j<totalRandomPressureArray1.length-1; j++)
 									{
-										for(int l=i; l<totalRandomPressureArray1.length; l++)
+										for(int l=j; l<totalRandomPressureArray1.length; l++)
 										{
 											if(totalRandomPressureArray1[l]<totalRandomPressureArray1[j])
 											{
@@ -471,7 +475,10 @@ public class capstoneProject
 											{
 												//count number of elements
 												int count=temporaryRandomPressureArray1.size();
-												randomPressureArray1HashMap.put(temporaryRandomPressureArray1.get(0), count);
+												int value=(Integer)temporaryRandomPressureArray1Iterator.next();
+												randomPressureArray1HashMap.put(value, count);
+												System.out.println("The value for mode calculation is "+value);
+												System.out.println("The count for mode calculation is "+count);
 											}
 											begin=middle+1;
 										}
@@ -479,6 +486,7 @@ public class capstoneProject
 									//The randomPressureArray1Reading string should contain the final chosen value after the algorithm has performed
 									//its selection during that particular second
 									//iterate through HashMap to calculate the average or mode, depending on what is wanted
+									
 									for(int z: randomPressureArray1HashMap.keySet())
 									{
 										//in the case where the number with the highest count is chosen (mode)
@@ -488,16 +496,29 @@ public class capstoneProject
 											highestCountKey=z;
 										}
 									}
+									int starter=0;
+									for(int indexer1=0; indexer1<totalRandomPressureArray1.length-1; indexer1++)
+									{
+										if(totalRandomPressureArray1[indexer1+1]>totalRandomPressureArray1[indexer1])
+										{
+											for(int indexer2=starter; indexer2<=indexer1; indexer2++)
+											{
+												temporaryRandomPressureArray1.add(totalRandomPressureArray1[indexer2]);
+												starter=indexer1+1;
+												if(indexer2==indexer1)
+												{
+													System.out.println("The value is "+totalRandomPressureArray1[indexer2]);
+													System.out.println("The count is "+temporaryRandomPressureArray1.size());
+													temporaryRandomPressureArray1.clear();
+												}
+											}
+										}
+									}*/
 									//end of mode calculation algorithm
-									*/
-									//randomPressureArray1.add(randomObject.nextInt(270-200)+200); //was 300
-									String randomPressureArray1Reading=Integer.toString(randomPressureArray1.get(index1));	//should put highestCountKey
-									pressure1Reading.setText(randomPressureArray1Reading+" kPa");
-									index1++;
 								}
 								else if(i==1)
 								{
-									for(int w=0; w<=9; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray2[w]=randomObject.nextInt(270-200)+200;
@@ -522,7 +543,7 @@ public class capstoneProject
 								}
 								else if(i==2)
 								{
-									for(int w=0; w<=9; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray3[w]=randomObject.nextInt(270-200)+200;
@@ -547,7 +568,7 @@ public class capstoneProject
 								}
 								else if(i==3)
 								{
-									for(int w=0; w<=9; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray4[w]=randomObject.nextInt(270-200)+200;
@@ -572,7 +593,7 @@ public class capstoneProject
 									recordingNumber++;
 									String recordingNumberString=Integer.toString(recordingNumber);
 									numberOfRecordingsValueLabel1.setText(recordingNumberString);
-								}       
+								}     
 							}
 						}
 					}

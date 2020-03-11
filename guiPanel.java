@@ -75,7 +75,8 @@ public class guiPanel extends JPanel
 		graphicsObject.drawLine(890, 100, 900, 100);
 		graphicsObject.drawLine(890, 50, 900, 50);
 		graphicsObject.drawLine(890, 5, 900, 5);
-		graphicsObject.drawString("Pressure in kPa", 800, 175);
+		//this appears on screen when not commented out
+		//graphicsObject.drawString("Pressure in kPa", 800, 175);
 
 		
 		//must put if statements in the case where 2 points overlap, lower one of them

@@ -83,6 +83,7 @@ public class capstoneProject
 	static boolean plotDataEnable=false;
 	static boolean dataCleared=false;
 	static int highestCountKey=0;
+	static boolean recordingContinued=false;
 
 	public static void main(String[] args)
 	{
@@ -397,6 +398,14 @@ public class capstoneProject
 				
 				//average pressure when tool handling 250 kPa
 				//need to generate four different values
+				//if stopRecording==false meaning that recording is happening, the show recordings window should be closed and cleared
+				recordingString=null;
+				recordedValues.setText(recordingString);
+				frameObject.setSize(new Dimension(700,700));
+				frameObject.setResizable(false);
+				dataCleared=true;
+				panelObject.revalidate();
+				panelObject.repaint();
 				stopRecording=false;
 				Timer timerObject=new Timer();
 				timerObject.schedule(new TimerTask()
@@ -847,6 +856,8 @@ public class capstoneProject
 				//recordingsDisplay recordingsDisplayObject=new recordingsDisplay();
 				//recordingsDisplayObject.recordingsDisplayBoolean=true;
 				panelObject.add(recordedValuesScrollPane);
+				//if record button is pressed again, close the recordings window 
+				
 			}
 		});
 		clearRecordingsButton.addActionListener(new ActionListener()

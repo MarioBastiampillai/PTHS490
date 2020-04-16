@@ -771,7 +771,7 @@ public class capstoneProject
 										{
 											average9=total9/(indexSensor9+1);
 											System.out.println("The average value for sensor 9 is"+average9);
-											//store the average value in the randomPressureArray2 arraylist
+											//store the average value in the randomPressureArray9 arraylist
 											randomPressureArray9.add(average9);
 											average9=0;
 											total9=0;
@@ -786,7 +786,7 @@ public class capstoneProject
 								}
 								else if(i==9)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray10[w]=randomObject.nextInt(270-200)+200;
@@ -798,13 +798,12 @@ public class capstoneProject
 										{
 											average10=total10/(indexSensor10+1);
 											System.out.println("The average value for sensor 10 is"+average10);
-											//store the average value in the randomPressureArray2 arraylist
+											//store the average value in the randomPressureArray10 arraylist
 											randomPressureArray10.add(average10);
 											average10=0;
 											total10=0;
 										}
 									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray10Reading=Integer.toString(randomPressureArray10.get(index10));
 									pressure10Reading.setText(randomPressureArray10Reading+" kPa");
 									index10++;
@@ -814,7 +813,7 @@ public class capstoneProject
 								} 
 								else if(i==10)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray11[w]=randomObject.nextInt(270-200)+200;
@@ -825,14 +824,13 @@ public class capstoneProject
 										if(indexSensor11==totalRandomPressureArray11.length-1)
 										{
 											average11=total11/(indexSensor11+1);
-											System.out.println("The average value for sensor 4 is"+average11);
-											//store the average value in the randomPressureArray2 arraylist
+											System.out.println("The average value for sensor 11 is"+average11);
+											//store the average value in the randomPressureArray11 arraylist
 											randomPressureArray11.add(average11);
 											average11=0;
 											total11=0;
 										}
-									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
+									} 
 									String randomPressureArray11Reading=Integer.toString(randomPressureArray11.get(index11));
 									pressure11Reading.setText(randomPressureArray11Reading+" kPa");
 									index11++;
@@ -842,7 +840,7 @@ public class capstoneProject
 								} 
 								else if(i==11)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray12[w]=randomObject.nextInt(270-200)+200;
@@ -854,13 +852,12 @@ public class capstoneProject
 										{
 											average12=total12/(indexSensor12+1);
 											System.out.println("The average value for sensor 12 is"+average12);
-											//store the average value in the randomPressureArray2 arraylist
+											//store the average value in the randomPressureArray12 arraylist
 											randomPressureArray12.add(average12);
 											average12=0;
 											total12=0;
 										}
 									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray12Reading=Integer.toString(randomPressureArray12.get(index12));
 									pressure12Reading.setText(randomPressureArray12Reading+" kPa");
 									index12++;
@@ -870,7 +867,7 @@ public class capstoneProject
 								} 
 								else if(i==12)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray13[w]=randomObject.nextInt(270-200)+200;
@@ -882,13 +879,12 @@ public class capstoneProject
 										{
 											average13=total13/(indexSensor13+1);
 											System.out.println("The average value for sensor 13 is"+average13);
-											//store the average value in the randomPressureArray2 arraylist
+											//store the average value in the randomPressureArray13 arraylist
 											randomPressureArray13.add(average13);
 											average13=0;
 											total13=0;
 										}
 									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray13Reading=Integer.toString(randomPressureArray13.get(index13));
 									pressure13Reading.setText(randomPressureArray13Reading+" kPa");
 									index13++;
@@ -898,7 +894,7 @@ public class capstoneProject
 								} 
 								else if(i==13)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray14[w]=randomObject.nextInt(270-200)+200;
@@ -910,13 +906,12 @@ public class capstoneProject
 										{
 											average14=total14/(indexSensor14+1);
 											System.out.println("The average value for sensor 14 is"+average14);
-											//store the average value in the randomPressureArray2 arraylist
+											//store the average value in the randomPressureArray14 arraylist
 											randomPressureArray14.add(average14);
 											average14=0;
 											total14=0;
 										}
 									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray14Reading=Integer.toString(randomPressureArray14.get(index14));
 									pressure14Reading.setText(randomPressureArray14Reading+" kPa");
 									index14++;
@@ -926,7 +921,7 @@ public class capstoneProject
 								} 
 								else if(i==14)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray15[w]=randomObject.nextInt(270-200)+200;
@@ -938,13 +933,12 @@ public class capstoneProject
 										{
 											average15=total15/(indexSensor15+1);
 											System.out.println("The average value for sensor 15 is"+average15);
-											//store the average value in the randomPressureArray2 arraylist
+											//store the average value in the randomPressureArray15 arraylist
 											randomPressureArray15.add(average15);
 											average15=0;
 											total15=0;
 										}
 									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray15Reading=Integer.toString(randomPressureArray15.get(index15));
 									pressure15Reading.setText(randomPressureArray15Reading+" kPa");
 									index15++;
@@ -954,7 +948,7 @@ public class capstoneProject
 								}
 								else if(i==15)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray16[w]=randomObject.nextInt(270-200)+200;
@@ -966,13 +960,12 @@ public class capstoneProject
 										{
 											average16=total16/(indexSensor16+1);
 											System.out.println("The average value for sensor 16 is"+average16);
-											//store the average value in the randomPressureArray2 arraylist
+											//store the average value in the randomPressureArray16 arraylist
 											randomPressureArray16.add(average16);
 											average16=0;
 											total16=0;
 										}
 									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray16Reading=Integer.toString(randomPressureArray16.get(index16));
 									pressure16Reading.setText(randomPressureArray16Reading+" kPa");
 									index16++;
@@ -982,7 +975,7 @@ public class capstoneProject
 								}
 								else if(i==16)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray17[w]=randomObject.nextInt(270-200)+200;
@@ -994,13 +987,12 @@ public class capstoneProject
 										{
 											average17=total17/(indexSensor17+1);
 											System.out.println("The average value for sensor 17 is"+average17);
-											//store the average value in the randomPressureArray2 arraylist
+											//store the average value in the randomPressureArray17 arraylist
 											randomPressureArray17.add(average17);
 											average17=0;
 											total17=0;
 										}
 									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray17Reading=Integer.toString(randomPressureArray17.get(index17));
 									pressure17Reading.setText(randomPressureArray17Reading+" kPa");
 									index17++;
@@ -1010,7 +1002,7 @@ public class capstoneProject
 								}
 								else if(i==17)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray18[w]=randomObject.nextInt(270-200)+200;
@@ -1022,13 +1014,12 @@ public class capstoneProject
 										{
 											average18=total18/(indexSensor18+1);
 											System.out.println("The average value for sensor 18 is"+average18);
-											//store the average value in the randomPressureArray2 arraylist
+											//store the average value in the randomPressureArray18 arraylist
 											randomPressureArray18.add(average18);
 											average18=0;
 											total18=0;
 										}
 									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray18Reading=Integer.toString(randomPressureArray18.get(index18));
 									pressure18Reading.setText(randomPressureArray18Reading+" kPa");
 									index18++;
@@ -1038,7 +1029,7 @@ public class capstoneProject
 								}
 								else if(i==18)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray19[w]=randomObject.nextInt(270-200)+200;
@@ -1050,13 +1041,12 @@ public class capstoneProject
 										{
 											average19=total19/(indexSensor19+1);
 											System.out.println("The average value for sensor 19 is"+average19);
-											//store the average value in the randomPressureArray2 arraylist
+											//store the average value in the randomPressureArray19 arraylist
 											randomPressureArray19.add(average19);
 											average19=0;
 											total19=0;
 										}
 									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray19Reading=Integer.toString(randomPressureArray19.get(index19));
 									pressure19Reading.setText(randomPressureArray19Reading+" kPa");
 									index19++;
@@ -1066,7 +1056,7 @@ public class capstoneProject
 								}
 								else if(i==19)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray20[w]=randomObject.nextInt(270-200)+200;
@@ -1078,13 +1068,12 @@ public class capstoneProject
 										{
 											average20=total20/(indexSensor20+1);
 											System.out.println("The average value for sensor 20 is"+average20);
-											//store the average value in the randomPressureArray2 arraylist
+											//store the average value in the randomPressureArray20 arraylist
 											randomPressureArray20.add(average20);
 											average20=0;
 											total20=0;
 										}
 									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray20Reading=Integer.toString(randomPressureArray20.get(index20));
 									pressure20Reading.setText(randomPressureArray20Reading+" kPa");
 									index20++;
@@ -1094,7 +1083,7 @@ public class capstoneProject
 								}
 								else if(i==20)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray21[w]=randomObject.nextInt(270-200)+200;
@@ -1105,14 +1094,13 @@ public class capstoneProject
 										if(indexSensor21==totalRandomPressureArray21.length-1)
 										{
 											average21=total21/(indexSensor21+1);
-											System.out.println("The average value for sensor 12 is"+average21);
-											//store the average value in the randomPressureArray2 arraylist
+											System.out.println("The average value for sensor 21 is"+average21);
+											//store the average value in the randomPressureArray21 arraylist
 											randomPressureArray21.add(average21);
 											average21=0;
 											total21=0;
 										}
 									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray21Reading=Integer.toString(randomPressureArray21.get(index21));
 									pressure21Reading.setText(randomPressureArray21Reading+" kPa");
 									index21++;
@@ -1122,7 +1110,7 @@ public class capstoneProject
 								}
 								else if(i==21)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray22[w]=randomObject.nextInt(270-200)+200;
@@ -1134,13 +1122,12 @@ public class capstoneProject
 										{
 											average22=total22/(indexSensor22+1);
 											System.out.println("The average value for sensor 22 is"+average22);
-											//store the average value in the randomPressureArray2 arraylist
+											//store the average value in the randomPressureArray22 arraylist
 											randomPressureArray22.add(average22);
 											average22=0;
 											total22=0;
 										}
 									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray22Reading=Integer.toString(randomPressureArray22.get(index22));
 									pressure22Reading.setText(randomPressureArray22Reading+" kPa");
 									index22++;
@@ -1150,7 +1137,7 @@ public class capstoneProject
 								}
 								else if(i==22)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray23[w]=randomObject.nextInt(270-200)+200;
@@ -1162,13 +1149,12 @@ public class capstoneProject
 										{
 											average23=total23/(indexSensor23+1);
 											System.out.println("The average value for sensor 23 is"+average23);
-											//store the average value in the randomPressureArray2 arraylist
+											//store the average value in the randomPressureArray23 arraylist
 											randomPressureArray23.add(average23);
 											average23=0;
 											total23=0;
 										}
 									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray23Reading=Integer.toString(randomPressureArray23.get(index23));
 									pressure23Reading.setText(randomPressureArray23Reading+" kPa");
 									index23++;
@@ -1178,7 +1164,7 @@ public class capstoneProject
 								}
 								else if(i==23)
 								{
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per 25 ms per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray24[w]=randomObject.nextInt(270-200)+200;
@@ -1190,13 +1176,12 @@ public class capstoneProject
 										{
 											average24=total24/(indexSensor24+1);
 											System.out.println("The average value for sensor 24 is"+average24);
-											//store the average value in the randomPressureArray2 arraylist
+											//store the average value in the randomPressureArray24 arraylist
 											randomPressureArray24.add(average24);
 											average24=0;
 											total24=0;
 										}
 									}
-									//randomPressureArray4.add(randomObject.nextInt(270-200)+200); //was 300 
 									String randomPressureArray24Reading=Integer.toString(randomPressureArray24.get(index24));
 									pressure24Reading.setText(randomPressureArray24Reading+" kPa");
 									index24++;
@@ -1207,7 +1192,7 @@ public class capstoneProject
 							}
 						}
 					}
-				}, 0, 1000);	//was 5000 for 5 seconds, not 25 ms
+				}, 0, 1000);	
 				
 			}
 		});

@@ -40,7 +40,7 @@ public class capstoneProject
 	static ArrayList<Integer> randomPressureArray22=new ArrayList<Integer>(1000);
 	static ArrayList<Integer> randomPressureArray23=new ArrayList<Integer>(1000);
 	static ArrayList<Integer> randomPressureArray24=new ArrayList<Integer>(1000);
-	//used to hold the initial 1000 values per 25 for each sensor, before calculation of the average
+	//used to hold the initial 1000 values per second for each sensor, before calculation of the average
 	static int totalRandomPressureArray1[]=new int[1000];
 	static int totalRandomPressureArray2[]=new int[1000];
 	static int totalRandomPressureArray3[]=new int[1000];
@@ -426,12 +426,6 @@ public class capstoneProject
 		accelerationLabel3.setForeground(Color.white);
 		panelObject.add(accelerationLabel3);
 		
-		JLabel accelerationValue=new JLabel();
-		accelerationValue.setText(" ");
-		accelerationValue.setBounds(525, 100, 100, 100);
-		accelerationValue.setForeground(Color.white);
-		//panelObject.add(accelerationValue);
-		
 		JLabel controlButtonsLabel=new JLabel();
 		controlButtonsLabel.setText("Control Area:");
 		controlButtonsLabel.setBounds(50,480, 150, 100);
@@ -549,7 +543,6 @@ public class capstoneProject
 				timerObject.schedule(new TimerTask()
 				{
 					int index1, index2, index3, index4, index5, index6, index7, index8, index9, index10, index11, index12, index13, index14, index15, index16, index17, index18, index19, index20, index21, index22, index23, index24=0;
-					//in the event that the averages must be calculated in parallel and not one after the other due to time constraint
 					int total1, total2, total3, total4, total5, total6, total7, total8, total9, total10, total11, total12, total13, total14, total15, total16, total17, total18, total19, total20, total21, total22, total23, total24=0;
 					int average1, average2, average3, average4, average5, average6, average7, average8, average9, average10, average11, average12, average13, average14, average15, average16, average17, average18, average19, average20, average21, average22, average23, average24=0;
 					@Override
@@ -557,27 +550,21 @@ public class capstoneProject
 					{
 						if(stopRecording==false)
 						{
-							int randomAcceleration=randomObject.nextInt(500-100)+100;
-							String randomAccelerationString=Integer.toString(randomAcceleration)+"m/s^2";
-							accelerationValue.setText(randomAccelerationString);
 							for(int i=0; i<=23; i++)	
 							{
 								if(i==0)
 								{
-									//assuming 1000 samples/sec for each sensor
-									for(int w=0; w<=999; w++)	//assuming finding the average 1000 samples per second per sensor
+									for(int w=0; w<=999; w++)	//assuming finding the average of 1000 samples per second per sensor
 									{
 										//generate 1000 random samples 
 										totalRandomPressureArray1[w]=randomObject.nextInt(270-200)+200;
 									}
 									for(int indexSensor1=0; indexSensor1<=totalRandomPressureArray1.length-1; indexSensor1++)
 									{
-										System.out.println("The current value for sensor 1 is"+totalRandomPressureArray1[indexSensor1]+" at index "+indexSensor1);
 										total1=total1+totalRandomPressureArray1[indexSensor1];
 										if(indexSensor1==totalRandomPressureArray1.length-1)
 										{
 											average1=total1/(indexSensor1+1);
-											System.out.println("The average value for sensor 1 is"+average1);
 											randomPressureArray1.add(average1);
 											average1=0;
 											total1=0;
@@ -1461,7 +1448,7 @@ public class capstoneProject
 				}
 				else
 				{
-				//code related to show recordings extension
+					//code related to show recordings extension
 					if(recordingNumber>3000)
 					{
 						System.out.println("Cannot display recordings if number of recordings exceeds 1000");
@@ -1661,7 +1648,6 @@ public class capstoneProject
 				pressure22Reading.setText(" ");
 				pressure23Reading.setText(" ");
 				pressure24Reading.setText(" ");
-				accelerationValue.setText(" ");
 				numberOfRecordingsValueLabel1.setText(" ");
 				recordingNumber=0;
 				dataCleared=true;

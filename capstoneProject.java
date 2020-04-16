@@ -1593,13 +1593,13 @@ public class capstoneProject
 						}
 					}
 					recordedValues.setBackground(new Color(10, 25, 54));	
-				recordedValues.setForeground(Color.white);
-				recordedValues.setEditable(false);
-				recordedValuesScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-				recordedValuesScrollPane.setBounds(800, 185, 500, 476);	
-				panelObject.add(recordedValuesScrollPane);
-				panelObject.revalidate();
-				showRecordingsLoadingLabel.setVisible(false);
+					recordedValues.setForeground(Color.white);
+					recordedValues.setEditable(false);
+					recordedValuesScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+					recordedValuesScrollPane.setBounds(800, 185, 500, 476);	
+					panelObject.add(recordedValuesScrollPane);
+					panelObject.revalidate();
+					showRecordingsLoadingLabel.setVisible(false);
 				}
 			}
 		});
